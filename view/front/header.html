@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="潇洒">
+    <link rel="stylesheet" href="../../public/front/css/index.css">
+    <link rel="stylesheet" href="../../public/front/font/iconfont.css">
+
+
+    <title>Zzt_PHP大作业</title>
+</head>
+<body>
+    <!-- header start -->
+    <div id="header">
+
+        <div id="h-mian">
+            <div class="h_m_left">
+                <ul>
+                    <li><a href="">小米商城</a>|</li>
+                    <li><a href="">MIUI</a>|</li>
+                    <li><a href="">米聊</a>|</li>
+                    <li><a href="">游戏</a>|</li>
+                    <li><a href="">多看阅读</a>|</li>
+                    <li><a href="">云服务</a>|</li>
+                    <li><a href="">金融</a>|</li>
+                    <li><a href="">小米网移动版</a>|</li>
+                    <li><a href="">问题反馈</a>|</li>
+                    <li><a href="">Select Region</a>|</li>
+                </ul>
+            </div>
+            <div class="h_m_right">
+                <ul class="h_m_r_login">
+                    <?php
+                        if(isset($_SESSION['user'])){
+                    ?>
+                    <li><a class="user_login" href="../user/add-list.php? id=<?=$_SESSION['user']['id']?>"><?=$_SESSION['user']['username']?> 欢迎您</a>|</li>
+                    <li><a href="../../front/user/logout.php">退出</a>|</li>
+                    <?php
+                        }else{
+                    ?>
+                    <li><a href="../../front/user/login.php">登录</a>|</li>
+                    <li><a href="../user/register.php">注册</a>|</li>
+                    <li><a href="">通知消息</a>|</li>
+                    <?php
+                        }
+                    ?>
+                </ul> 
+
+                <div class="h_m_r_buy">
+                    <a href="" class="buy"><span class="iconfont icon-gouwuche1"></span>购物车(0)</a>
+                    <div class="hide">
+                        购物车里面没有内容,赶紧选购吧！
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- header end -->
+
+    <!-- nav start -->
+    <div id="nav">
+        <div class="nav_content">
+            <!-- logo -->
+            <div class="n_logo">
+                <a href=""><img src="../../public/front/image/mi-logo.png" width="49px" height="49px" alt=""></a>
+            </div>
+            <div class="n_main">
+                <ul>
+                    <li class="product"><a>光华.醋</a></li>
+                    <li class="product"><a>光华.酱油</a></li>
+                    <li class="product"><a>光华.料酒</a></li>
+                    <li class="product"><a>光华.酱</a></li>
+                    <li class="product"><a>光华.醋精</a></li>
+                    <li class="product"><a>路由器</a></li>
+                    <li class="product"><a>智能硬件</a></li>
+                    <li class="product"><a href="">服务</a></li>
+                    <li class="product"><a href="">社区</a></li>
+                </ul>
+            </div>
+
+            <div class="n_search">
+                <div class="n_s_input">
+                    <input type="text">
+                    <a href="" class="a1 tip">小米MIX</a>
+                    <a href="" class="a2 tip">人工智能电视</a>
+                    <div class="hide">
+                        <ul>
+                            <li><a href="http://www.baidu.com"><span class="s1">小米5s Plus</span><span class="s2">约有5件</span></a></li>
+                            <li><a href=""><span class="s1">小米Max</span><span class="s2">约有8件</span></a></li>
+                            <li><a href=""><span class="s1">小米手机5</span><span class="s2">约有10件</span></a></li>
+                            <li><a href=""><span class="s1">空气净化器</span><span class="s2">约有3件</span></a></li>
+                            <li><a href=""><span class="s1">活塞耳机</span><span class="s2">约有6件</span></a></li>
+                            <li><a href=""><span class="s1">小米路由器</span><span class="s2">约有14件</span></a></li>
+                            <li><a href=""><span class="s1">移动电源</span><span class="s2">约有11件</span></a></li>
+                            <li><a href=""><span class="s1">运动相机</span><span class="s2">约有件</span></a></li>
+                            <li><a href=""><span class="s1">小蚁摄像机</span><span class="s2">约有5件</span></a></li>
+                            <li><a href=""><span class="s1">小米体重秤</span><span class="s2">约有1件</span></a></li>
+                            <li><a href=""><span class="s1">小米插线板</span><span class="s2">约有10件</span></a></li>
+                            <li><a href=""><span class="s1">配件优惠套餐</span><span class="s2">约有23件</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="n_s_btn">
+                    <span class="iconfont icon-sousu"></span>

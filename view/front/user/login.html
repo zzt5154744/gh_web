@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>光华酿造-登录</title>
+    <link rel="stylesheet" href="../../public/front/font/iconfont.css">
+    <link rel="stylesheet" href="../../public/front/css/login.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- header start -->
+        <div id="header">
+                <div class="h_title">
+                    <h2>光华酿造</h2>
+                    <a href="">
+                        <img class="img" src="../../public/front/image/mi-logo.png" alt="" style="width:50px;" height="50px;">
+                    </a>
+                </div>
+        </div>
+    <!-- header end -->
+    <!-- main start -->
+        <div id="main">
+            <div class="m_login">
+                <div class="m_headr">
+                    <form action="" method="POST">
+                    <h2>账号登录</h2>
+
+                    <div class="m_user">
+                    <input class="name" name="username" type="text" placeholder="邮箱/手机号码">
+                    <input class="pwd" name="password" type="password" placeholder="密码">
+                    </div>
+                    <button class="log">登录</button>
+                    
+
+                    <div class="user_top">
+                    <div class="remember">
+                        <input type="checkbox" name="remember" >
+                        <span>记住用户名</span>
+                    </div>
+
+                    <div class="zhuce">
+                        <a href="../user/register.php" class="zhuce_liji">
+                            <span>立即注册 |</span>
+                        </a>
+                        <a href="" class="wang">
+                            <span>忘记密码?</span>
+                        </a>
+                    </div>
+                    <div><?=$msg?></div>
+                </div>
+            </form>
+                </div>
+            </div>
+        </div>
+    <!-- main end -->
+
+    <!-- footer -->
+    <script src="../public/front/js/jquery-3.3.1.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+        /* header start */
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            outline:none;
+            color: black;
+        }
+        input{
+            outline: none;
+        }
+        button{
+            text-decoration: none;
+            border: 0;
+            outline: none;
+        }
+        #header{
+            width:100%;
+            height:70px;
+            background: white; 
+        }
+        #header .h_title{
+            width: 1160px;
+            height: 100%;
+            margin: 20px auto;
+        }
+        #header .h_title h2{
+            display: inline;
+            height: 50px;
+            line-height: 50px;  
+            font-weight: normal;
+            font-size: 26px;
+            color: #333;
+        }
+        #header .h_title a .img{
+            float: left;
+            margin-right: 20px;
+            background-color: #f60;
+        }
+        /* header end */
+
+        /* start main */
+        
+        #main{
+            width: 100%;
+            height: 600px;
+            background-image: url("../image/QQ图片20181120153618.jpg");
+        }
+
+        #main .m_login{
+            float: right;
+            margin: 50px 150px;
+            width: 400px;
+            height: 540px;
+            background: white;
+            box-shadow: 0 0 1px #666;
+        }
+        #main .m_login .m_headr h2{
+            font-weight: normal;
+            font-size: 26px;
+            color: #f60;
+            letter-spacing:2px;
+            text-align: center;
+            margin: 20px auto;
+        } 
+        #main .m_login .m_headr{
+            width: 310px;
+            margin: 30px auto;
+        }
+        #main .m_login .m_headr .m_user input{
+            text-indent: 1em;
+            width: 310px;
+            height: 48px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            color: #000;
+            caret-color:#000;
+        }
+        #main .m_login .m_headr .m_user input.pwd{
+            margin-top: 10px;
+        }
+        #main .m_login .m_headr button{
+            width: 310px;
+            margin-top: 20px;
+            height: 48px;
+            font-size: 14px;
+            background: #f60;
+            color: white;
+            cursor: pointer;
+        }
+        #main .m_login .m_headr .remember{
+            display: inline;
+            font-size: 14px;
+            color: #f60;
+        }
+        #main .m_login .m_headr .zhuce{
+            font-size: 14px;
+            display: inline;
+            float: right;
+        }
+        #main .m_login .m_headr .user_top{
+            margin-top: 20px;
+        }
+        /* main end */
