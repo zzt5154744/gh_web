@@ -1,0 +1,88 @@
+<div class="nav_hide">
+    <div class="n_h_mian">
+        <form method="POST" class="from">
+            <input type="hidden" class="c_id" name="id">
+        <ul>
+            <?php foreach($category_result1 as $item):?>
+            <li>
+                <div class="img">   
+                <a href="../user/details.php?id=<?=$item['id']?>">
+                <img src="../../public/upload/<?=$item['image']?>" alt="" width="130" height="110"></a>
+                <a href=""><p class="name"><?=$item['name']?></p></a>
+                    <a href=""></a><p class="price"><?=$item['price']?>元</p></a>
+                </div>
+            </li>
+            <?php endforeach;?>
+           
+        </ul>
+        <!-- 酱油 -->
+        <ul>
+            <?php foreach($category_result2 as $item):?>
+                <li>
+                    <div class="img">
+                    <a href="../user/details.php?id=<?=$item['id']?>">
+                    <img src="../../public/upload/<?=$item['image']?>" alt="" width="130" height="110"></a>
+                    <a href=""><p class="name"><?=$item['name']?></p></a>
+                        <a href=""></a><p class="price"><?=$item['price']?></p></a>
+                    </div>
+                </li>
+            <?php endforeach;?>
+        </ul>
+        <!-- 醋 -->
+        <ul>
+                <?php foreach($category_result3 as $item):?>
+                <li>
+                    <div class="img">
+                    <a href="../user/details.php?id=<?=$item['id']?>">
+                    <img src="../../public/upload/<?=$item['image']?>" alt="" width="130" height="110"></a>
+                    <a href=""><p class="name"><?=$item['name']?></p></a>
+                        <a href=""></a><p class="price"><?=$item['price']?></p></a>
+                    </div>
+                </li>
+                <?php endforeach;?>
+        </ul>
+        <!-- 酱油 -->
+        <ul>
+                <?php foreach($category_result4 as $item):?>
+                <li>
+                    <div class="img">
+                    <a href="../user/details.php?id=<?=$item['id']?>">
+                    <img src="../../public/upload/<?=$item['image']?>" alt="" width="130" height="110"></a>
+                    <a href=""><p class="name"><?=$item['name']?></p></a>
+                        <a href=""></a><p class="price"><?=$item['price']?></p></a>
+                    </div>
+                </li>
+                <?php endforeach;?>
+        </ul>
+        <!-- 醋精 -->
+        <ul>
+                <?php foreach($category_result5 as $item):?>
+                <li>
+                    <div class="img">   
+                    <a href="../user/details.php?id=<?=$item['id']?>">
+                    <img src="../../public/upload/<?=$item['image']?>" alt="" width="130" height="110"></a>
+                    <a href=""><p class="name"><?=$item['name']?></p></a>
+                        <a href=""></a><p class="price"><?=$item['price']?>元</p></a>
+                    </div>
+                </li>
+                <?php endforeach;?>
+
+        </ul>
+        <!-- 礼包 -->
+        <ul>
+                <?php foreach($category_result6 as $item):?>
+                <li>
+                    <div class="img">   
+                    <a href="../user/details.php?id=<?=$item['id']?>">
+                     <img src="../../public/upload/<?=$item['image']?>" alt="" width="130" height="110"></a>
+                    <a href=""><p class="name"><?=$item['name']?></p></a>
+                    <a href=""></a><p class="price"><?=$item['price']?>元</p></a>
+                    </div>
+                </li>
+                <?php endforeach;?>
+ 
+        </ul>
+    </form>                 
+    </div>
+</div>
+

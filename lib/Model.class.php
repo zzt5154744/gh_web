@@ -39,6 +39,14 @@ class Model
 
         return $this->mypdo->nonQuery($sql,$data);
     }
+
+    public function categoryupdate($data,$id)
+    {
+        $sql=sprintf("update %s set %s  where category_id=%s",$this->_table,
+            $this->formatUpdateFields($data),$id);
+
+        return $this->mypdo->nonQuery($sql,$data);
+    }
     /*
      * select one record
      *
@@ -96,6 +104,73 @@ class Model
         return $this->mypdo->selectAll($sql,$conditionData);
     }
 
+
+    public function selectreplyMany($conditionData=null,$count=null,$orderby=null)
+    {
+
+        $sql="";
+        if($count==null ){
+            $countSQL='';
+        }else{
+            $countSQL="  limit ".$count;
+        }
+        if($orderby==null){
+            $orderbySQL=' order by r_id desc ';
+        }else
+        {
+            $orderbySQL=" order by ";
+            foreach($orderby as $key=>$value)
+            {
+                $orderSQL="  ".$key."  ".$value;
+                $orderbySQL .= $orderSQL.',';
+            }
+            //去除字符串最后一个字符
+            $orderbySQL=substr($orderbySQL,0,strlen($orderbySQL)-1);
+        }
+        if(!isset($conditionData)) {
+            $sql=sprintf("select * from %s  ",$this->_table);
+        }else{
+            $sql=sprintf("select * from %s where %s ",$this->_table,
+                $this->formatConditionFields($conditionData));
+
+        }
+        $sql=$sql.$orderbySQL.$countSQL;
+
+        return $this->mypdo->selectAll($sql,$conditionData);
+    }
+
+
+    public function selectManyview($conditionData=null,$count=null,$orderby=null)
+    {
+
+        $sql="";
+        if($count==null ){
+            $countSQL='';
+        }else{
+            $countSQL="  limit ".$count;
+        }
+        if($orderby==null){
+        }else
+        {
+            foreach($orderby as $key=>$value)
+            {
+                $orderSQL="  ".$key."  ".$value;
+                $orderbySQL .= $orderSQL.',';
+            }
+            //去除字符串最后一个字符
+            $orderbySQL=substr($orderbySQL,0,strlen($orderbySQL)-1);
+        }
+        if(!isset($conditionData)) {
+            $sql=sprintf("select * view %s  ",$this->_table);
+        }else{
+            $sql=sprintf("select * view %s where %s ",$this->_table,
+                $this->formatConditionFields($conditionData));
+
+        }
+        $sql=$sql.$orderbySQL.$countSQL;
+
+        return $this->mypdo->selectAll($sql,$conditionData);
+    }
 
     public function selectcategoryMany($conditionData=null,$count=null,$orderby=null)
     {

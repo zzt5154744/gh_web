@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../public/front/js/jquery-3.3.1.js"></script>
+    <!-- <script src="../../../public/front/js/person.js"></script> -->
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    li{
+       list-style: none;
+       vertical-align:top;
+   }
+   input{
+       vertical-align:top;
+       text-decoration: none;
+       outline:none;
+   }
+   a{
+       text-decoration: none;
+       outline:none;
+       color: black;
+   }
+   body{
+       width: 100%;
+       height: 100%;
+       background: rgb(248, 248, 248);
+   }
+   html{
+       position: relative;
+   }
+   button{
+       border: none;
+       outline:none;
+       text-decoration: none;
+   }
+    #header{
+        width: 900px;
+        height: 100px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+    #header .logo{
+        /* position: absolute; */
+        float: left;
+        width: 500px;
+        height: 100px;
+    }
+    #header .logout{
+        float: right;
+        height:100px;
+        line-height: 50px;
+    }
+    #header .logout a{
+        color: #aaa;
+        font-size: 14px;
+    }
+
+    #p_main{
+        width: 900px;
+        border-radius: 20px;
+        height: 500px;
+        background: white;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    #nav{
+        width: 900px;
+        margin: 0 auto;
+    }
+    #nav .nav_left{
+        width: 500px;
+        float: left;
+    }
+    #nav .nav_right{
+        width: 400px;
+        top: 170px;
+        position: absolute;
+        right:0;
+        /* float: right; */
+        margin-right: 10px;
+        padding-bottom: 20px;
+    }
+
+    #p_main .image{
+        width: 300px;
+        float: left;
+    }
+    #p_main .i_img{
+        width: 100px;
+        margin: 160px auto;
+    }
+    #p_main .i_img li{
+        cursor: pointer;
+       padding-left: 12px;
+       color: #f60;
+       margin-top: 10px;
+        font-size: 14px;
+    }
+    #p_main .center{
+        width: 300px;
+        float: left;
+    }
+    #p_main .center .top{
+        margin: 150px auto;
+    }
+    #p_main .center .top li{
+        margin-top: 10px;
+        height: 40px;
+        line-height: 40px;
+        color: #777;
+        font-size: 14px;
+    }
+    .nav_left{
+        width: 800px;
+        margin: 10px auto;
+    }
+    #p_main .right{
+        margin: 150px auto;
+        width: 200px;
+        color: #777;
+        font-size: 14px;
+        float: right;
+    }
+    #p_main .right li{
+        height: 40px;
+        line-height: 40px;
+        color: #f60;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    #b_main{
+        position:absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+    #b_main .basics{
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+        border-radius: 5px;
+        width: 450px;
+        height: 400px;
+        background: rgb(249, 249, 249);
+    }
+    #b_main .basics .top{
+        width: 400px;
+        height: 35px;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-left: 9px;
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 5px;
+    }
+    #b_main .basics .top .left{
+        float: left;
+  
+    }
+    #b_main .basics .close{
+        width: 10px;
+        margin-top: 10px;
+        height: 10px;
+        line-height: 10px;
+        float: right;
+    }
+    #b_main .basics .close span{
+        color: #555;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #b_main .basics .bottom{
+        margin-left: 30px;
+        width: 230px;
+        height: 35px;
+    }
+    #b_main .basics .bottom button{
+        width: 100px;
+        height: 35px;
+        color: black;
+        background: #eee;
+        cursor: pointer;
+    }
+    #b_main .basics .bottom div{
+        display: inline-block;
+        width: 100px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 13px;
+        color: black;
+        background: #eee;
+        cursor: pointer;
+    }
+    #b_main .basics .bottom button.save{
+        background: #f60;
+        margin-right: 20px;
+        color: white;
+    }
+    #b_main .basics form{
+        width: 300px;
+        margin: 0 auto;
+    }
+    #b_main .basics form div{
+        margin-top: 15px;
+        line-height: 35px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #555;
+    }
+    #b_main .basics input{
+        text-indent: 4px;
+        font-size: 14px;
+        color: #777;
+        width: 230px;
+        height: 35px;
+        border: 1px solid #ddd;
+    }
+    /* #b_main .basics .sex input{
+        width: 200px;
+        height: 25px;
+    } */
+    #b_main .basics .text{
+        line-height: 60px;
+        /* height: 60px; */
+    }
+    #b_main .basics .text textarea{
+        /* margin-left: 50px; */
+        text-indent: 4px;
+        color: #777;
+        width: 280px;
+        height: 60px;
+    }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="logo">
+            <!-- <img src="../../..//public/front/image/mi-logo.png" style="width:60;height:50px;"> -->
+            <h4>Gh酿造</h4>
+        </div>
+        <li class="logout"><a href="../../front/home/index.php">返回</a></li>  
+    </div>
+    <div class="nav_left">
+            <h4>个人信息</h4>
+    </div>
+    <div id="nav">
+        <div class="nav_right">
+                <li></li>
+                <img src="../../public/upload/<?=$data['image']?>" style="width:80px;height:80px;border-radius: 50%;" alt="">
+        </div>
+    </div>  
+   
+    <div id="p_main">
+        <div class="image">
+            <div class="i_img">
+                <img src="../../public/upload/<?=$data['image']?>" style="width:80px;height:80px;border-radius:50%;" alt="">
+                <li>修改图片</li>
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="top">
+            <h4>基础资料</h4>
+            <li>姓名 &nbsp;:<span> <?=$data['username']?></span></li>
+            <li>邮箱 &nbsp;: <?=$data['email']?></li>
+            <li>个性签名 &nbsp;:<?=$data['description']?></li>
+            </div>
+        </div>
+
+        <div class="right">
+                <li>编辑</li>
+        </div>
+    </div>
+
+    <div id="b_main">
+        <div class="basics">
+            <div class="top">
+                <div class="left">
+                <h4>编辑基础资料</h4>
+            </div>
+                <div class="close">
+                        <span class="guan">x</span>
+                    </div>
+            </div>
+            <div class="center">
+                <form action="../../front/user/person.php?id=<?=$_SESSION['user']['id']?>" method="POST"> 
+                    <div class="name">     
+                    <span>姓名&nbsp;&nbsp;:</span>&nbsp;&nbsp;<input type="text" name="username" value="<?=$data['username']?>">
+                    </div> 
+                    <div class="sex">
+                    <span>邮箱&nbsp;&nbsp;:</span>&nbsp;&nbsp;<input type="text" name="email" value="<?=$data['email']?>">
+                    </div> 
+                    <div class="text">
+                    <span>个性签名&nbsp;&nbsp;</span>&nbsp;
+                    <textarea id="" cols="30" rows="10" name="description" value="<?=$data['description']?>"><?=$data['description']?></textarea>
+                    </div>
+            <div class="bottom">
+                <button class="save">保存</button>
+                <div class="cancel">取消</div>
+            </div>
+                 </form>
+    </div>
+    </div>
+    <script>
+        (function(){
+        var  edit =  $("#p_main .right");
+        var  cancel = $("#b_main .bottom .cancel");
+        var  close = $("#b_main .basics .top .close .guan");
+            // console.log(edit);
+            edit.click(function(){
+                $("#b_main").css("display","block");
+            })
+            cancel.click(function(){
+                $("#b_main").css("display","none");
+            })
+            close.click(function(){
+                $("#b_main").css("display","none");
+            })
+        })();
+
+        (function(){
+       var edit = $("#p_main .image .i_img li");
+       edit.click(function(){
+           alert(1);
+                $("#img_main").css("display","block");
+            })
+
+        })();
+        
+    </script>
+</body>
+</html>

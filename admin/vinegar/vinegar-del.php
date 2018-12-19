@@ -2,6 +2,7 @@
 
     include_once "../../start.php";
     require_once ROOT_PATH."model/Vinegar.class.php";
+    Helper::checkLogin();
     $vinegar = new Vinegar();
     $id = $_POST['id'];
     echo $id;

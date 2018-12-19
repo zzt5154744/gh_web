@@ -12,11 +12,25 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../public/admin/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="../../public/admin/js//xadmin.js"></script>
+    <script src="../../public/front/js/jquery-3.3.1.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
       <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
       <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+    .item_option{
+      /* float: left; */
+      position: absolute;
+      top: 123px;
+      left: 120px;
+      width: 200px;
+      height: 35px;
+    }
+    .category{
+      height: 40px;
+    }
+    </style>
   </head>
   
   <body>
@@ -33,16 +47,24 @@
     <div class="x-body">
       <div class="layui-row">
         <form class="layui-form layui-col-md12 x-so">
-          <input class="layui-input" placeholder="开始日" name="start" id="start">
-          <input class="layui-input" placeholder="截止日" name="end" id="end">
           <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
           <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
         </form>
       </div>
       <xblock>
-        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
         <button class="layui-btn" onclick="x_admin_show('添加产品','../../admin/vinegar/vinegar-add.php')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+        <form class="layui-form" method="POST"  enctype="multipart/form-data">
+          <div class="layui-input-inline">
+          <select id="cateid" name="cateid">
+        <?php foreach($categorys as $item):?>
+          <option grade="<?=$item['category_id']?>" name="category_name"  value="<?=$item['category_id']?>">
+            <?=$item['category_name']?>
+          </option>
+        <?php endforeach;?>
+      </select>           
+      </div> 
+      </form>
+        <span class="x-right" style="line-height:40px">共有数据：<?=$v_count?> 条</span>
       </xblock>
       <table class="layui-table">
         <thead>
@@ -52,11 +74,11 @@
             </th>
             <th>ID</th>
             <th>图片</th>
+            <th>产品类型</th>
             <th>产品名称</th>
             <th>价格</th>
             <th>毫升</th>
             <th>加入时间</th>
-            <th>状态</th>
             <th>操作</th>
         </thead>
         <?php foreach($data as $item):?>
@@ -66,18 +88,16 @@
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td><?= $item['id']?></td>
-            <td><img src="../../public/upload/<?=$item['image']?>" alt=""></td>
+            <td><img src="../../public/upload/<?=$item['image']?>" width="30px;" alt=""></td>
+            <td><?= $item['category_name']?></td>
             <td><?= $item['name']?></td>
             <td><?= $item['price']?></td>
             <td><?= $item['ml']?></td>
             <td><?= $item['addtime']?></td>
-            <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
+            <!-- <td class="td-status"> -->
+              <!-- <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
             <td class="td-manage">
                 <form action="../../admin/vinegar/vinegar-del.php" method="POST">
-              <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
-                <i class="layui-icon">&#xe601;</i>
-              </a>
               <a title="编辑"   onclick="x_admin_show('编辑','../../admin/vinegar/vinegar-edit.php?id=<?=$item['id']?>')" href="javascript:;">
                 <!-- <a class="btn btn-primary" href="edit.php?id=<?= $item['id'] ?>">修改</a> -->  
                 <i class="layui-icon">&#xe642;</i>
@@ -105,8 +125,45 @@
         </div>
       </div>
 
-    </div>
+    <!-- </div>
+    <select id="sumyear" >
+        <option grade="0" value="a" >请选择年份</option>
+        <option grade="1" value="b" >2018</option>
+        <option grade="2" value="c" >2019</option>
+    </select> -->
+        <select id="sumyear" name="cateid">
+      <?php foreach($categorys as $item):?>
+        <option grade="<?=$item['category_id']?>" name="category_name"  value="<?=$item['category_id']?>">
+          <?=$item['category_name']?>
+        </option>
+      <?php endforeach;?>
+    </select>           
     <script>
+
+        $(document).ready(function(){
+          
+          $("#sumyear").change(function(data){
+            var content = ($(this).children('option:selected').val()); 
+          console.log(content);
+                $.post("../../admin/vinegar/vinegar-list.php",{
+                    "category_id":content,
+                },function(data){
+                  // console.log(data);
+                })
+            })
+
+
+
+      //   $("#cateid").change(function(){
+      //     window.alert(1);
+      //       alert($(this).children('option:selected').val()); 
+      //   })
+      });
+
+   
+
+
+
       layui.use('laydate', function(){
         var laydate = layui.laydate;
         
@@ -154,9 +211,7 @@
               $.post('../../admin/vinegar/vinegar-del.php',{id:id},function(data){
                 $(obj).parents("tr").remove();
               layer.msg('已删除!',{icon:1,time:1000});
-                  
               });
-
           });
       }
 
@@ -180,4 +235,4 @@
       })();</script>
   </body>
 
-</html> -->
+</html>

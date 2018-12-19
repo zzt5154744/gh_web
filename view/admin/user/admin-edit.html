@@ -24,6 +24,7 @@
         <div class="x-body">
                 <form class="layui-form" method="POST"  enctype="multipart/form-data">
                   <div class="layui-form-item">
+                        <input type="hidden" name="oldimg" value="<?= $data['image']?>">
                       <label for="username" class="layui-form-label">
                           <span class="x-red">*</span>用户名
                       </label>
@@ -47,8 +48,8 @@
                         <span class="x-red">*</span>头像
                     </label>
                     <div class="layui-input-block">
-                            <input type="file" class="form-control" name="image" value="../../public/upload/<?= $data['image']?>">
-                            <img src="../../public/upload/<?= $data['image']?>" style="width:70px;" class="img-rounded">
+                            <input type="file" class="form-control" name="image">
+                            <img src="../../public/upload/<?= $data['image']?>" style="width:100px;height: 110px;" class="img-rounded">
                     </div>
                   </div>
 
@@ -108,7 +109,7 @@
                   <div class="layui-form-item">
                       <label for="L_repass" class="layui-form-label">
                       </label>
-                      <button type="submit" class="layui-btn" lay-submit="">
+                      <button  class="layui-btn" lay-filter="add" lay-submit="">
                           增加
                       </button>
                   </div>
@@ -138,12 +139,12 @@
             form.on('submit(add)', function(data){
         //发异步，把数据提交给php
             // 获得frame索引
-            console.log(data)
-            $.post('../../admin/category/category-edit.php',{data:data},function(data){
+            // console.log(data)
                 layer.alert("增加成功", {icon: 6},function(){
+            $.post('../../admin/category/category-edit.php',{data:data},function(data){
                     var index = parent.layer.getFrameIndex(window.name);
                     parent.layer.close(index);
-                });
+                }());
                 return false;
             },JSON);
         });

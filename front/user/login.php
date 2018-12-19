@@ -12,20 +12,20 @@
         if(isset($_POST['remember'])){
     
             setcookie('username',$username,time()+360);
-            // setcookie('password',$password,time()+3600);
         }
         $model = new User();
         $user = $model->select(['username'=>$username,'password'=>$password]);
-    
         if(!empty($user)){
             $_SESSION['user'] = $user;
             $url=isset($_GET['returnUrl'])?$_GET['returnUrl']:"../home/index.php";
             header("location:$url");
         }else{
-            $msg = "用户名或者密码错误!";
+            $msg = "<span class='user_p'>用户名或者密码错误!</span>";
             $username  = "";
             include_once ROOT_PATH."view/front/user/login.html";
         }
+
+
     }else{
     
         $username = "";
@@ -35,6 +35,5 @@
             $username = $_COOKIE['username'];
         }
         
-        //根目录 ROOT_PATH
     include_once ROOT_PATH.'view/front/user/login.html';
     }

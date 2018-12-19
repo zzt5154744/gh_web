@@ -49,7 +49,7 @@
         #main{
             width: 100%;
             height: 600px;
-            background-image: url("../image/QQ图片20181120153618.jpg");
+            background-image: url("../image/zzzz.jpg");
         }
 
         #main .m_login{
@@ -72,7 +72,7 @@
             width: 310px;
             margin: 30px auto;
         }
-        #main .m_login .m_headr .m_user input{
+        #main .m_login .m_headr .m_user input[type='text'],#main .m_login .m_headr .m_user input[type='password']{
             text-indent: 1em;
             width: 310px;
             height: 48px;
@@ -80,6 +80,19 @@
             border: 1px solid #ddd;
             color: #000;
             caret-color:#000;
+        }
+        #main .m_login .m_headr .m_user .user_p{
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #f60;
+        }
+
+        #main .m_login .m_headr .m_user p{
+            color: #f60;
+            margin: 10px auto;
+            font-size:12px;
         }
         #main .m_login .m_headr .m_user input.pwd{
             margin-top: 10px;

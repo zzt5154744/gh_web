@@ -49,7 +49,7 @@
         #main{
             width: 100%;
             height: 600px;
-            background-image: url("../image/QQ图片20181120153618.jpg");
+            background-image: url("../image/zzzz.jpg");
         }
 
         #main .m_login{
@@ -81,8 +81,28 @@
             color: #000;
             caret-color:#000;
         }
-        #main .m_login .m_headr .m_user input.pwd{
+        #main .m_login .m_headr .mark{
+            position: absolute;
+            display: none;
+            top: 400px;
+            right: 270px;
+            width: 150px;
+            height: 50px;
+            background: rgba(0, 0, 0,0.7);
+            /* background: #000; */
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+        #main .m_login .m_headr .m_user input{
             margin-top: 10px;
+        }
+        #main .m_login .m_headr .m_user p{
+            color: #f60;
+            font-size:12px;
+        }
+        #main .m_login .m_headr input:focus{
+            border: 1px solid #f60;
         }
         #main .m_login .m_headr button{
             width: 310px;

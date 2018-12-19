@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{text-decoration: none;}
+button{
+    outline: none;
+    border: none;
+}
+    #box {
+        width: 100%;
+        height: 100px;
+        border-bottom:  2px solid #f60;
+        background: white;
+    }
+    #box .header{
+        width: 1226px;
+        margin: 0 auto;
+    }
+    #box .header .h_left{
+        width: 700px;
+        float: left;
+        /* height: 150px; */
+        line-height: 80px;
+    }
+    #box .header .h_right{
+        float: right;
+        margin-top: 10px;
+        width: 520px;
+        height: 100px;
+        line-height: 80px;
+    }
+    #box .header .h_left .img {
+        display: inline;
+        width: 80px;
+    }
+    #box .header .h_left .img .logo{
+        margin-top: 25px;
+        background: #f60;
+    }
+    #box .header .h_left .gouwu{
+        margin-top: 10px;
+        float: right;
+        width: 620px;
+        /* float: left; */
+    }
+
+    #box .header .h_left .gouwu .g_car{
+        font-size: 25px;
+        color: #333;
+        font-weight: normal;
+    }
+    #box .header .h_left .gouwu .inform{
+        font-size: 12px;
+        color: #777;
+        margin-left: 20px;
+    }
+    #box .header .h_right .r_user{
+        font-size: 12px;
+        margin-left: 330px;
+    }
+    #box .header .h_right .r_user a{
+        margin-left: 20px;
+        color: #333;
+        cursor: pointer;
+    }
+    #main{
+        position: relative;
+        width: 100%;
+        /* height: 500px; */
+        /* background: rgb(245, 245, 245); */
+    }
+    #main .m_main{
+        width: 1226px;
+        height: 500px;
+        margin: 50px auto;
+        background: white;
+    }
+    body{
+        background: rgb(245, 245, 245);
+    }
+    #main .m_main ul.list{
+        width: 1226px;
+        height: 70px;
+        line-height: 70px;
+        border-bottom: 1px solid #ccc;
+    }
+    #main .m_main ul.list li{
+        font-size: 14px;
+        color: #444;
+        line-height: 70px;
+        float: left;
+    }
+    #main .m_main ul.list li input[type=checkbox]{
+        /* margin-top: 10px; */
+        padding-top: 20px;
+        line-height: 50px;
+        background: #E92333;
+        color: #f60;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    #main .m_main .username{
+        font-size: 18px;    
+        color: #444;
+    }
+    #main .m_main .vinegar{
+        height: 80px;
+        line-height: 70px;
+        margin-top: 15px;
+    }
+    #main .m_main .vinegar li{
+        float: left;
+        /* height: 70px; */
+        /* width: 70px; */
+        line-height: 70px;
+        color: #555;
+        text-align: center;
+    }
+    #main .m_main .vinegar li.xiaoji{
+        color: #f60;
+    }
+    #main .m_main .vinegar li input[type=checkbox]{
+
+        /* background: #f60; */
+        background: #E92333;
+        color: #f60;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    #main .m_main .vinegar .number{
+        /* width: 140px; */
+        position: relative;
+        border: 1px solid #ccc;
+        /* height: 50px; */
+        margin-left: 20px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 17px auto;
+    }
+    #main .m_main .vinegar .number .add{
+        position: absolute;
+        left: 10px;
+    }
+    #main .m_main .vinegar .number .adc{
+        position: absolute;
+        right: 10px;
+    }
+    #main .m_main .vinegar .opertion a{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        display:inline-block;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    #main .m_main .vinegar .opertion a:hover{
+        background-color: #333;
+        color: white;
+    }
+    #footer{
+        position: relative;
+        width: 1226px;
+        background: white;
+        line-height: 60px;
+        height: 60px;
+        margin: 40px auto;
+    }
+    #footer .f_left{
+        width: 613px;
+        float: left;
+    }
+    #footer .f_left span{
+        font-size: 14px;
+        color: #777;
+    }
+    #footer .f_left span.shopping{
+        display:inline-block;
+        padding-right: 25px;
+    }
+    #footer .f_left span.heng{
+        display:inline-block;
+        color: #ddd;
+        padding-right: 25px;
+    }
+    #footer .f_left .shop{
+        margin-left: 50px;
+    }
+    #footer .f_left span .index{
+        color: #f60;
+    }
+    #footer .f_right{
+        width: 613px;
+        float: right;
+    } 
+    #footer .f_right .heji{
+        margin-left: 300px;
+    }
+    #footer .f_right .heji span.heng{
+        margin-right: 25px;
+        color:#ccc;
+    }
+    #footer .f_right .heji button{
+        width: 140px;
+        height: 60px;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+        background: #f60;
+        color: white;
+    }
+    #footer .f_right span{
+        color: #f60;
+        font-size: 14px;
+    }
+    #footer .f_right .price{
+        margin-left: 10px;
+        font-size: 25px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="header">
+        <div class="h_left">
+            <div class="img">
+            <img class="logo" src="../../public/front/image/mi-logo.png" style="width:60px;height:50px;" alt="">
+        </div>
+            <div class="gouwu">
+            <span class="g_car">我的购物车</span>
+            <span class="inform">温馨提示：产品是否购买成功，以最终下单为标准哦，请尽快结算</span>
+             </div>
+    </div>
+        <div class="h_right">
+            <div class="r_user">
+            <a><?=$username?></a>
+            <a>我的订单</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
+    <div id="main"> 
+        <div class="m_main">
+            <ul class="list">
+                <li style="width:25px;padding-left: 30px;"><input type="checkbox"></li>
+                <li  style="width:160px;">全选</li>
+                <li  style="width:400px;">商品名称</li>
+                <li  style="width:200px;">单价</li>
+                <li  style="width:170px;">数量</li>
+                <li  style="width:170px;">小计</li>
+                <li  style="width:70px;">操作</li>
+            </ul>
+
+
+            <?php foreach($result_shopping as $item):?>
+            <ul class="vinegar">
+            <li style="width:40px;padding-left:30px">
+            <input type="checkbox">
+            </li> 
+            
+             <li style="width:100px;">
+             <img src="../../public/upload/<?=$item['image']?>" style="width:60px;height:60px;" alt="">
+            </li>
+
+            <li style="width:360px;">
+            <span class="username"><?=$item['v_name']?></span>
+            </li>
+
+            <li style="width:220px;">
+            <span class="price"><?=$item['price']?></span>
+            </li>
+
+            <li class="number"style="width:145px;">
+                <span class="add">-</span>
+                <span class="val">1</span>
+                <span class="adc">+</span>
+            </li>
+            <li class="xiaoji" style="width:215px;">
+                    <span><?=$item['price']?>元</span>
+                </li>        
+            <li class="opertion" style="width:110px;">
+                    <a>×</a>
+            </li>
+            </ul>
+            <?php endforeach;?>
+        </div>
+    </div>
+
+
+
+    <div id="footer">
+        <div class="f_left">
+            <div class="shop">
+        <span class="shopping">继续购物</span><span class="heng">|</span>
+        <span>共 <span class="index"><?=$shoppingcount?></span> 件商品,已选择 <span class="index">0</span>件</span>
+            </div>
+         </div>
+         <div class="f_right">
+             <div class="heji">
+            <span class="heng">|</span>
+            <span class="sum">合计:</span>
+            <span class="price"><?=$sum?></span>
+            <span class="sum">元</span>
+            <button>去结算</button>
+        </div>
+         </div>
+    </div>
+    <script>
+        var left_btn = document.getElementsByClassName("add")[0];
+        var right_btn = document.getElementsByClassName("adc")[0];
+        var text = document.getElementsByClassName("val")[0];
+
+        function add(btn) {
+            btn.onclick=function () {
+                text.innerHTML++;
+            }
+        }
+        add(right_btn);
+        // add.call(text.innerHTML);
+        function adc(btn) {
+            btn.onclick=function() {
+                text.innerHTML--;
+                if(text.innerHTML < 0){
+                    text.innerHTML = 0;
+                    alert("到底了");
+                }
+            }
+        }
+        adc(left_btn);
+
+
+
+    </script>
+
+</body>
+</html>

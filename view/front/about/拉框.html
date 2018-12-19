@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;
+			 padding: 0;
+			 font-family: "微软雅黑";
+			}
+			li{list-style: none;}
+		#content{
+			width: 200px;
+			margin: 0 auto;
+		}
+		#content li{
+			width: 150px;
+			height: 30px;
+			line-height: 30px;
+			background-color: orangered;
+			text-align: center;
+			font-size: 18px;
+			color: white;
+			cursor: pointer;
+			border-bottom: 1px solid cadetblue;
+			/*display: none;*/
+		}
+		#content li:hover{
+			background-color: black;
+		}
+		/*#content li:first-child{
+			display: block;
+			background-color: orange;
+			color:black;
+		}			*/
+		#content .on{
+			display: block;
+			color: white;
+			background-color: orange;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<li class="on">同事</li>
+			<ul class="colle">
+			<li>潇洒哥</li>
+			<li>水米哥</li>
+			<li>小跃跃</li>
+			<li>卡布达</li>		
+			</ul>
+			
+			<li class="on">家庭</li>
+			<ul class="family">
+			<li>妈妈</li>
+			<li>哥哥</li>
+			<li>姐姐</li>
+			<li>老婆</li>		
+			</ul>
+			
+			<li class="on">老师</li>
+			<ul class="teacher">
+			<li>风屿</li>
+			<li>乌拉</li>
+			<li>心艾</li>
+			<li>小龙</li>		
+			</ul>
+			
+			<li class="on">同学</li>
+			<ul class="school">
+			<li>宝英</li>
+			<li>阿飘</li>
+			<li>心艾</li>
+			<li>小龙</li>		
+			</ul>
+			
+			<script>
+				var col=document.getElementsByClassName("colle")[0];
+					famm=document.getElementsByClassName("family")[0];
+					tea=document.getElementsByClassName("teacher")[0];
+					sch=document.getElementsByClassName("school")[0];
+					on=document.getElementsByClassName("on");
+					index=0;
+					findex=0;
+					tindex=0;
+					sindex=0;
+					
+				   
+				   on[0].onclick=function(){
+					if(index===0){
+						col.style.display="none";
+						index=1;
+					}else{
+						col.style.display="block";
+						index=0;
+					}
+				}	
+				
+					on[1].onclick=function(){
+						if(findex===0){
+						famm.style.display="none";
+						findex=1;
+					}else{
+						famm.style.display="block";
+						findex=0;
+					}
+					}
+				
+				
+						on[2].onclick=function(){
+						if(tindex===0){
+						tea.style.display="none";
+						tindex=1;
+					}else{
+						tea.style.display="block";
+						tindex=0;
+					}
+					}
+						
+					on[3].onclick=function(){
+						if(sindex===0){
+						sch.style.display="none";
+						sindex=1;
+					}else{
+						sch.style.display="block";
+						sindex=0;
+					}
+					}
+			</script>
+			
+			
+		</div>
+	</body>
+</html>

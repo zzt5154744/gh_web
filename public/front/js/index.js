@@ -31,6 +31,13 @@
     })
 })();
 
+// (function(){
+//     var $person = $("#header .h_m_right .h_m_r_login .person");
+//     $person.click(function(){
+//     })
+// })();
+
+
 /**nav search*/
 (function () {
     var $input = $('#nav .n_search .n_s_input input');

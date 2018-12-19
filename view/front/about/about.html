@@ -1,0 +1,125 @@
+<?php include_once ROOT_PATH."view/front/header.html"?>
+</div>
+</div>
+</div>
+<?php include_once ROOT_PATH."view/front/nav_hide.html"?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于我们</title>
+    <style>
+        #a_header{
+            width: 100%;
+            height: 560px;
+        }
+        .a_img{
+            width: 1226px;
+            height: 250px;
+            margin: 20px auto;
+        }
+        #jianjie{
+            width: 1226px;
+            height: 400px;
+            margin: 0 auto;
+            /*text-align: center;*/
+        }
+        #jianjie .details h2{
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            /* height: 20px; */
+            /* text-align: center; */
+            /* margin-left: 50px;  */
+            /* padding-left: 100px; */
+        }
+        #jianjie .details{
+            width: 700px;
+            float: left;
+            margin-left: 50px;
+            margin-top: 15px;
+            font-size: 12px;
+            height: 250px;
+            line-height: 25px;
+            /* text-indent: 5em; */
+            /*text-align: center;*/
+            /*text-align: center;*/
+            letter-spacing:2px;
+        }
+
+        #jianjie .left_list{
+            width: 150px;
+            height: 210px;
+            line-height: 40px;
+            margin-left: 220px;
+            float: left;
+            /* border-bottom: 2px solid #ddd; */
+            box-shadow: 3px  0px 0px #eee; 
+            
+        }
+        #jianjie .left_list .j_list li{
+            width: 135px;
+            font-size: 12px;
+            padding-left: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        #jianjie .left_list .j_list li a.on{
+            color: #f60;
+        }
+        #jianjie .left_list .j_list li a:hover{
+            color: #f60;
+        }
+    </style>
+</head>
+<body>
+    <div id="a_header">
+        <div class="a_box">
+            <div class="a_img">
+                <img src="../../public/front/image/banner/dm.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="jianjie">
+        <div class="left_list">
+            <h3>关于光华</h3>
+            <ul class="j_list">
+                <li><a class="on" href="../../front/about/about.php">公司介绍</a></li>
+                <li><a href="../../front/about/about2.php">企业里程碑</a></li>
+                <li><a href="">卓越成就</a></li>
+                <li><a href="">全球业务</a></li>
+            </ul>
+        </div>
+
+        <div class="right_list">
+                    <div class="details">
+                            <h2>公司介绍</h2>
+                            <br>
+                        丹东光华酿造有限公司简介 丹东光华酿造有限公司坐落于丹东市元宝区光华路1号，已有70多年的生产调味品的历史，2004年由国企转
+                         制为股份有限责任公司， 占地23亩，建筑面积8000平方米，系丹东市最大的专业生产调味品企业，中国调味品协会会员单位。
+                        <br><br>
+                            公司注册资本500万元， 资产总值3000余万元。公司2000年起被授予“辽宁省放心食品示范企业”。
+                        <br><br>
+                        丹东“AAA级放心食品生产企业”，丹东市
+                                第二批市级农业 产业化重点龙头企业，国家工业产品生产许可证获证单位，辽宁省“守合同、重信用企业“。
+         </div>
+         </div>
+    </div>
+    <script>
+     var btn = document.querySelectorAll("#jianjie .left_list .j_list li a");
+
+    for(var i=0;i<btn.length;i++){
+        btn[i].onclick = function(){
+            // alert(btn[i]);
+            // btn[i].className = 'on';
+            this.classList.add('on');
+        }
+
+    }
+    </script>
+</body>
+</html>
+<?php include_once ROOT_PATH."view/front/footer.html"?>

@@ -1,6 +1,6 @@
 <?php
 require_once "../../start.php";
-// Helper::checkLogin();
+Helper::checkLogin();
 require_once ROOT_PATH."model/User.class.php";
 function dopost(){
     $user = new User();
@@ -10,6 +10,7 @@ function dopost(){
     $phone_number = $_POST['phone_number'];
     $sex = $_POST['sex'];
     $role = $_POST['role'];
+
 
     if($_FILES['image']['error']==0)
     {
@@ -46,12 +47,19 @@ function dopost(){
     ];
     
     $result = $user->add($data);
+    // var_dump($result);
+    if($result == 1){
+    echo "<script type='text/javascript'>
+        var index = parent.layer.getFrameIndex(window.name);
+         parent.layer.close(index);
+        </script>";
+    }
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
-        // echo "成功";
         dopost();
+        include_once ROOT_PATH."view/admin/user/admin-add.html";
         // include_once ROOT_PATH."view/admin/user/admin-list.html";
     }else{
         // dopost();

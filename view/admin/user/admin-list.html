@@ -22,10 +22,8 @@
   <body>
     <div class="x-nav">
       <span class="layui-breadcrumb">
-        <a href="">首页</a>
-        <a href="">演示</a>
+        <a href="../../admin/home/welcome.php">首页</a>
         <a>
-          <cite>导航元素</cite></a>
       </span>
       <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
@@ -33,16 +31,14 @@
     <div class="x-body">
       <div class="layui-row">
         <form class="layui-form layui-col-md12 x-so">
-          <input class="layui-input" placeholder="开始日" name="start" id="start">
-          <input class="layui-input" placeholder="截止日" name="end" id="end">
           <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
           <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
         </form>
       </div>
       <xblock>
-        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+        <!-- <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button> -->
         <button class="layui-btn" onclick="x_admin_show('添加用户','../../admin/user/admin-add.php')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+        <span class="x-right" style="line-height:40px">共有数据：<?=$u_count?>条</span>
       </xblock>
       <table class="layui-table">
         <thead>
@@ -57,7 +53,6 @@
             <th>手机</th>
             <th>角色</th>
             <th>加入时间</th>
-            <th>状态</th>
             <th>操作</th>
         </thead>
         <?php foreach($data as $item):?>
@@ -67,14 +62,18 @@
               <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
             </td>
             <td><?= $item['id']?></td>
-            <td><img src="../../public/upload/<?=$item['image']?>" alt=""></td>
+            <td><img src="../../public/upload/<?=$item['image']?>" width="40" height="40" alt=""></td>
             <td><?= $item['username']?></td>
             <td><?= $item['email']?></td>
             <td><?= $item['phone_number']?></td>
-            <td><?= $item['role']?></td>
+            <?php if($item['role'] == 1 ){?>
+            <td>管理员</td>
+            <?php }else{?>
+            <td>普通用户</td> 
+            <?php }?>
             <td><?= $item['addtime']?></td>
-            <td class="td-status">
-              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
+            <!-- <td class="td-status">
+              <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td> -->
             <td class="td-manage">
                 <form action="../../admin/user/admin-del.php" method="POST">
               <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
@@ -182,4 +181,4 @@
       })();</script>
   </body>
 
-</html> -->
+</html>

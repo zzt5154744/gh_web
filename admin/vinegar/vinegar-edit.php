@@ -3,12 +3,15 @@
 include_once "../../start.php";
 include_once "../../model/Vinegar.class.php";
 $vinegar = new Vinegar();
+Helper::checkLogin();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 $id = $_GET['id'];
 echo $id;
 $name = $_POST['name'];
 $price = $_POST['price'];
 $ml = $_POST['ml'];
+$oldimg = $_POST['oldimg'];
+$category = $_POST['category_id'];
 if($_FILES['image']['error']==0)
 {
     $ext_arr=array('jpg','jpeg','gif','bmp');   
@@ -27,24 +30,33 @@ if($_FILES['image']['error']==0)
     }
 }else //不成功时，文件为空
 {
-    $img="";
+    $img=$oldimg;
 }
 
 
 $data = [
     "name" => $name,
     "price" => $price,
+    "image" => $img,
     "ml" => $ml,
+    'category_id' => $category,
     "addtime" => date('y-m-d H:i:s',time())
 ];
-var_dump($data);
 $result = $vinegar->update($data,$id);
-echo $result;
+if($result == 1){
+    echo "<script type='text/javascript'>
+        var index = parent.layer.getFrameIndex(window.name);
+         parent.layer.close(index);
+        window.alert('编辑成功');
+        </script>";
+    }
 }
 else
 {  
+    include_once ROOT_PATH."model/Category.class.php";
+     $catemodel = new Category();
+    $categorys = $catemodel ->selectcategoryMany();
     $id = $_GET['id'];
-    echo $id;
     $data = ['id'=> $id];
     $result = $vinegar->select($data);
     $data = $result;

@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="潇洒">
     <link rel="stylesheet" href="../../public/front/css/index.css">
     <link rel="stylesheet" href="../../public/front/font/iconfont.css">
-
-
     <title>Zzt_PHP大作业</title>
 </head>
 <body>
@@ -17,16 +15,10 @@
         <div id="h-mian">
             <div class="h_m_left">
                 <ul>
-                    <li><a href="">小米商城</a>|</li>
-                    <li><a href="">MIUI</a>|</li>
-                    <li><a href="">米聊</a>|</li>
-                    <li><a href="">游戏</a>|</li>
-                    <li><a href="">多看阅读</a>|</li>
-                    <li><a href="">云服务</a>|</li>
-                    <li><a href="">金融</a>|</li>
-                    <li><a href="">小米网移动版</a>|</li>
+                    <li><a href="">关注光华公众号</a>|</li>
+                    <li><a href="">关注光华小程序</a>|</li>
                     <li><a href="">问题反馈</a>|</li>
-                    <li><a href="">Select Region</a>|</li>
+                    <li><a href="">look Guanghua</a>|</li>
                 </ul>
             </div>
             <div class="h_m_right">
@@ -34,8 +26,9 @@
                     <?php
                         if(isset($_SESSION['user'])){
                     ?>
-                    <li><a class="user_login" href="../user/add-list.php? id=<?=$_SESSION['user']['id']?>"><?=$_SESSION['user']['username']?> 欢迎您</a>|</li>
+                    <li><a class="user_login"><?=$_SESSION['user']['username']?> 欢迎您</a>|</li>
                     <li><a href="../../front/user/logout.php">退出</a>|</li>
+                    <li class="person"><a class="person" href="../../front/user/person.php?id=<?=$_SESSION['user']['id']?>">个人中心</a>|</li>
                     <?php
                         }else{
                     ?>
@@ -45,18 +38,76 @@
                     <?php
                         }
                     ?>
-                </ul> 
+                </ul>
+            <?php
+                if(isset($_SESSION['user'])){
+            include_once ROOT_PATH."front/user/header.php";
+            ?>
+            <?php 
+                if($result_id['role'] == 1){?>
+                    <div class="h_m_r_buy">
+                        <a href="../../admin/home/index.php" class="buy"></span>后台管理</a>
+                    </div>
 
+                <?php }else{?>
                 <div class="h_m_r_buy">
-                    <a href="" class="buy"><span class="iconfont icon-gouwuche1"></span>购物车(0)</a>
+                    <a href="" class="buy"><span class="iconfont icon-gouwuche1"></span>购物车(<?=$count?>)</a>
                     <div class="hide">
-                        购物车里面没有内容,赶紧选购吧！
+                        <?php foreach($result_shopping as $item):?>
+                         <!-- 购物车里面没有内容,赶紧选购吧！ -->
+                         <div class="h_main">
+                             <div class="img">
+                            <img src="../../public/upload/<?=$item['image']?>" style="width:40px;height:40px;" alt="">
+                            </div>
+                            <div class="content">
+                            <span><?=$item['v_name']?></span>
+                            <span><?=$item['price']?></span>
+                        </div>
+                        </div>
+                        <?php endforeach;?>
+                        <?php
+                        if($count==(0)){
+                        ?>
+                                    <!-- <div class="h_main"> -->
+                                    <p class="h_shop">购物车里面没有内容,赶紧选购吧！</p> 
+                                     <!-- </div> -->
+                        <?php 
+                        }else{
+                            ?>
+                        <div class="vinegar">
+                                <form action="../../front/user/shoppinglist.php?id=<?=$item['v_id']?>" method="POST">
+                                <div class="v_left">
+                                <p>共 <span class="index"><?=$count?></span> 件商品</p>
+                                <p><span class="price"><?=$sum?></span>元</p>
+                                </div>
+                                <div class="v_right">
+                                    <button>去购物车结算</button>
+                                </div>
+                            </form>
+                            </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
+                <?php }?>
+        <?php
+            }else{
+        ?>
+        <div class="h_m_r_buy">
+            <a href="" class="buy"><span class="iconfont icon-gouwuche1"></span>购物车(0)</a>
+            <div class="hide">
+                <!-- <div class="h_main"> -->
+                <p class="h_shop">购物车里面没有内容,赶紧选购吧！</p> 
+                 <!-- </div> -->
             </div>
-
         </div>
-
+        <?php
+        }
+        ?>
+            </div>
+           
+        </div>
     </div>
     <!-- header end -->
 
@@ -65,41 +116,42 @@
         <div class="nav_content">
             <!-- logo -->
             <div class="n_logo">
-                <a href=""><img src="../../public/front/image/mi-logo.png" width="49px" height="49px" alt=""></a>
+                <a href=""><img src="../../public/front/image/mi-logo.png" width="60px" height="49px" alt=""></a>
+            </div>
+            <div class="nav_list">
+                <ul>
+                    <li><a style="color:#f60;" href="../../front/home/index.php">首页</a></li>
+                    <li><a href="../../front/about/about.php">关于我们</a></li>
+                    <li><a href="">职业发展</a></li>
+                    <li><a href="">公司动态</a></li>
+                    <li  style="border-right:1px solid #ccc;"><a href="">联系我们</a></li>
+                </ul>
             </div>
             <div class="n_main">
                 <ul>
-                    <li class="product"><a>光华.醋</a></li>
-                    <li class="product"><a>光华.酱油</a></li>
-                    <li class="product"><a>光华.料酒</a></li>
-                    <li class="product"><a>光华.酱</a></li>
-                    <li class="product"><a>光华.醋精</a></li>
-                    <li class="product"><a>路由器</a></li>
-                    <li class="product"><a>智能硬件</a></li>
-                    <li class="product"><a href="">服务</a></li>
-                    <li class="product"><a href="">社区</a></li>
+                    <li class="product"><a><img src="../../public/front/image/bz/bz1.gif" style="width: 68px;height: 60px;" alt=""></a></li>
+                    <li class="product"><a><img src="../../public/front/image/bz/bz3.gif" style="width: 68px;height: 60px;" alt=""></a></li>
+                    <li class="product"><a><img src="../../public/front/image/bz/bz2.gif" style="width: 68px;height: 60px;" alt=""></a></li>
+                    <li class="product"><a><img src="../../public/front/image/bz/bz4.gif" style="width: 68px;height: 60px;" alt=""></a></li>
+                    <li class="product"><a><img src="../../public/front/image/bz/bz6.png" style="width: 68px;height: 60px;" alt=""></a></li>
+                    <li class="product"><a><img src="../../public/front/image/bz/bz5.gif" style="width: 68px;height: 60px;" alt=""></a></li>
+                    <!-- <li class="product"><a href="">服务</a></li> -->
+                    <!-- <li class="product"><a href="">社区</a></li> -->
                 </ul>
             </div>
 
             <div class="n_search">
                 <div class="n_s_input">
                     <input type="text">
-                    <a href="" class="a1 tip">小米MIX</a>
-                    <a href="" class="a2 tip">人工智能电视</a>
+                    <a href="../user/details.php?id=3" class="a1 tip">光华醋</a>
+                    <a href="../user/details.php?id=10" class="a2 tip">光华9°塔醋</a>
                     <div class="hide">
-                        <ul>
-                            <li><a href="http://www.baidu.com"><span class="s1">小米5s Plus</span><span class="s2">约有5件</span></a></li>
-                            <li><a href=""><span class="s1">小米Max</span><span class="s2">约有8件</span></a></li>
-                            <li><a href=""><span class="s1">小米手机5</span><span class="s2">约有10件</span></a></li>
-                            <li><a href=""><span class="s1">空气净化器</span><span class="s2">约有3件</span></a></li>
-                            <li><a href=""><span class="s1">活塞耳机</span><span class="s2">约有6件</span></a></li>
-                            <li><a href=""><span class="s1">小米路由器</span><span class="s2">约有14件</span></a></li>
-                            <li><a href=""><span class="s1">移动电源</span><span class="s2">约有11件</span></a></li>
-                            <li><a href=""><span class="s1">运动相机</span><span class="s2">约有件</span></a></li>
-                            <li><a href=""><span class="s1">小蚁摄像机</span><span class="s2">约有5件</span></a></li>
-                            <li><a href=""><span class="s1">小米体重秤</span><span class="s2">约有1件</span></a></li>
-                            <li><a href=""><span class="s1">小米插线板</span><span class="s2">约有10件</span></a></li>
-                            <li><a href=""><span class="s1">配件优惠套餐</span><span class="s2">约有23件</span></a></li>
+                        <ul></ul>
+                            <!-- <li><a href="http://www.baidu.com"><span class="s1">小米5s Plus</span><span class="s2">约有5件</span></a></li> -->
+                            <!-- <li><a href="../user/details.php?id=<?=$item['id']?>"><span class="s1">光华醋</span><span class="s2">约有8件</span></a></li> -->
+                            <li><a href="../user/details.php?id=<?=$item['id']?>"><span class="s1">光华酱油</span><span class="s2">约有10件</span></a></li>
+                            <li><a href="../user/details.php?id=<?=$item['id']?>"><span class="s1">光华料酒</span><span class="s2">约有3件</span></a></li>
+                            <li><a href="../user/details.php?id=<?=$item['id']?>"><span class="s1">月亮岛豆瓣酱</span><span class="s2">约有6件</span></a></li>
                         </ul>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 require_once "../../start.php";
 // Helper::checkLogin();
 require_once ROOT_PATH.'model/Vinegar.class.php';
+Helper::checkLogin();
 function dopost(){
     $vinegar = new Vinegar();
     $name = $_POST['name'];

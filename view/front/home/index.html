@@ -2,346 +2,17 @@
 </div>
 </div>
 </div>
-<div class="nav_hide">
-    <div class="n_h_mian">
-        <ul>
-            <?php foreach($data as $item):?>
-            <li>
-                <div class="img">   
-                <a href="">
-                <img src="../../public/upload/<?=$item['image']?>" alt="" width="160" height="110"></a>
-                <a href=""><p class="name"><?=$item['name']?></p></a>
-                    <a href=""></a><p class="price"><?=$item['price']?>元</p></a>
-                </div>
-                
-            </li>
-            <?php endforeach;?>
-             <!-- <li>
-                    <div class="img">
-                            <a href=""><img src="../../public/front/image/nav/1/2.jpg" alt="" width="160" height="110"></a>
-                                <a href=""><p class="name">小米MIX</p></a>
-                                    <a href=""><p class="price">3499元</p></a>
-                    </div>
-            </li>
-            <li>     <div class="img">
-                    <a href=""><img src="../../public/front/image/nav/1/3.jpg" alt="" width="160" height="110"></a>
-                        <a href=""> <p class="name">小米5s</p></a>
-                            <a href=""><p class="price">1899元</p></a>
-                    </div>
-            </li>
-            <li>
-                <div class="img">
-                        <a href=""><img src="../../public/front/image/nav/1/4.jpg" alt="" width="160" height="110"></a>
-                            <a href=""> <p class="name">小米5sPlUS</p></a>
-                                <a href=""><p class="price">2299元</p></a>
-                </div>
-            </li>
-            <li>
-                <div class="img"> 
-                        <a href=""><img src="../../public/front/image/nav/1/5.jpg" alt="" width="160" height="110"></a>
-                            <a href=""><p class="name">小米手机5</p></a>
-                                <a href=""><p class="price">1599元</p></a>
-                </div>
-            </li>
-            <li>
-                <div class="img" style="border:none">
-                        <a href=""><img src="../../public/front/image/nav/1/6.jpg" alt="" width="160" height="110" ></a>
-                            <a href=""><p class="name">小米Max</p></a>
-                                <a href=""><p class="price">1299元</p></a>
-                </div>
-            </li> -->
-        </ul>
-        <!-- 红米 -->
-        <ul>
-                <?php foreach($category_result2 as $item):?>
-                <li>
-                    <div class="img">
-                    <a href="">
-                    <img src="../../public/upload/<?=$item['image']?>" alt="" width="160" height="110"></a>
-                    <a href=""><p class="name"><?=$item['name']?></p></a>
-                        <a href=""></a><p class="price"><?=$item['price']?></p></a>
-                    </div>
-                </li>
-                <?php endforeach;?>
-                <!-- <li>
-                        <div class="img">
-                                <a href=""><img src="../../public/front/image/nav/2/2.jpg" alt="" width="160" height="110"></a>
-                                    <a href=""><p class="name">小米MIX</p></a>
-                                        <a href=""><p class="price">3499元</p></a>
-                        </div>
-                </li>
-                <li>     <div class="img">
-                        <a href=""><img src="../../public/front/image/nav/2/3.jpg" alt="" width="160" height="110"></a>
-                            <a href=""> <p class="name">小米5s</p></a>
-                                <a href=""><p class="price">1899元</p></a>
-                        </div>
-                </li>
-                <li>
-                    <div class="img">
-                            <a href=""><img src="../../public/front/image/nav/2/4.jpg" alt="" width="160" height="110"></a>
-                                <a href=""> <p class="name">小米5sPlUS</p></a>
-                                    <a href=""><p class="price">2299元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"> 
-                            <a href=""><img src="../../public/front/image/nav/2/5.jpg" alt="" width="160" height="110"></a>
-                                <a href=""><p class="name">小米手机5</p></a>
-                                    <a href=""><p class="price">1599元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img" style="border:none">
-                            <a href=""><img src="../../public/front/image/nav/2/6.jpg" alt="" width="160" height="110" ></a>
-                                <a href=""><p class="name">小米Max</p></a>
-                                    <a href=""><p class="price">1299元</p></a>
-                    </div>
-                </li> -->
-        </ul>
-        <!-- 平板笔记本 -->
-        <ul>
-                <?php foreach($category_result3 as $item):?>
-                <li>
-                    <div class="img">
-                    <a href="">
-                    <img src="../../public/upload/<?=$item['image']?>" alt="" width="160" height="110"></a>
-                    <a href=""><p class="name"><?=$item['name']?></p></a>
-                        <a href=""></a><p class="price"><?=$item['price']?></p></a>
-                    </div>
-                </li>
-                <?php endforeach;?>
-                <!-- <li>
-                        <div class="img">
-                                <a href=""><img src="../../public/front/image/nav/3/2.jpg" alt="" width="160" height="110"></a>
-                                    <a href=""><p class="name">小米MIX</p></a>
-                                        <a href=""><p class="price">3499元</p></a>
-                        </div>
-                </li>
-                <li>     <div class="img">
-                        <a href=""><img src="../../public/front/image/nav/3/3.jpg" alt="" width="160" height="110"></a>
-                            <a href=""> <p class="name">小米5s</p></a>
-                                <a href=""><p class="price">1899元</p></a>
-                        </div>
-                </li>
-                <li>
-                    <div class="img">
-                            <a href=""><img src="../../public/front/image/nav/3/4.jpg" alt="" width="160" height="110"></a>
-                                <a href=""> <p class="name">小米5sPlUS</p></a>
-                                    <a href=""><p class="price">2299元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"> 
-                            <a href=""><img src="../../public/front/image/nav/3/5.jpg" alt="" width="160" height="110"></a>
-                                <a href=""><p class="name">小米手机5</p></a>
-                                    <a href=""><p class="price">1599元</p></a>
-                    </div>
-                </li>
-                <li> -->
-                    <!-- <div class="img" style="border:none"> -->
-                            <!-- <a href=""><img src="../../public/front/image/nav/3/6." alt="" width="160" height="110" ></a> -->
-                                <!-- <a href=""><p class="name">小米Max</p></a> -->
-                                    <!-- <a href=""><p class="price">1299元</p></a> -->
-                    <!-- </div> -->
-                <!-- </li> -->
-        </ul>
-        <!-- 电视 -->
-        <ul>
-                <?php foreach($category_result4 as $item):?>
-                <li>
-                    <div class="img">
-                    <a href="">
-                    <img src="../../public/upload/<?=$item['image']?>" alt="" width="160" height="110"></a>
-                    <a href=""><p class="name"><?=$item['name']?></p></a>
-                        <a href=""></a><p class="price"><?=$item['price']?></p></a>
-                    </div>
-                </li>
-                <?php endforeach;?>
-                <!-- <li>
-                        <div class="img">
-                                <a href=""><img src="../../public/front/image/nav/4/2.png" alt="" width="160" height="110"></a>
-                                    <a href=""><p class="name">小米MIX</p></a>
-                                        <a href=""><p class="price">3499元</p></a>
-                        </div>
-                </li>
-                <li>     <div class="img">
-                        <a href=""><img src="../../public/front/image/nav/4/3.png" alt="" width="160" height="110"></a>
-                            <a href=""> <p class="name">小米5s</p></a>
-                                <a href=""><p class="price">1899元</p></a>
-                        </div>
-                </li>
-                <li>
-                    <div class="img">
-                            <a href=""><img src="../../public/front/image/nav/4/4.png" alt="" width="160" height="110"></a>
-                                <a href=""> <p class="name">小米5sPlUS</p></a>
-                                    <a href=""><p class="price">2299元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"> 
-                            <a href=""><img src="../../public/front/image/nav/4/5.png" alt="" width="160" height="110"></a>
-                                <a href=""><p class="name">小米手机5</p></a>
-                                    <a href=""><p class="price">1599元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img" style="border:none">
-                            <a href=""><img src="../../public/front/image/nav/4/6.png" alt="" width="160" height="110" ></a>
-                                <a href=""><p class="name">小米Max</p></a>
-                                    <a href=""><p class="price">1299元</p></a>
-                    </div>
-                </li> -->
-        </ul>
-        <!-- 盒子.影音 -->
-        <ul>
-                <li>
-                    <div class="img">
-                    <a href="">
-                    <img src="../../public/front/image/nav/5/1.png" alt="" width="160" height="110"></a>
-                    <a href=""><p class="name">小米note2</p></a>
-                        <a href=""></a><p class="price">2799元</p></a>
-                    </div>
-                    
-                </li>
-                <li>
-                        <div class="img">
-                                <a href=""><img src="../../public/front/image/nav/5/2.png" alt="" width="160" height="110"></a>
-                                    <a href=""><p class="name">小米MIX</p></a>
-                                        <a href=""><p class="price">3499元</p></a>
-                        </div>
-                </li>
-                <li>     <div class="img">
-                        <a href=""><img src="../../public/front/image/nav/5/3.png" alt="" width="160" height="110"></a>
-                            <a href=""> <p class="name">小米5s</p></a>
-                                <a href=""><p class="price">1899元</p></a>
-                        </div>
-                </li>
-                <li>
-                    <div class="img">
-                            <a href=""><img src="../../public/front/image/nav/5/4.jpg" alt="" width="160" height="110"></a>
-                                <a href=""> <p class="name">小米5sPlUS</p></a>
-                                    <a href=""><p class="price">2299元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"> 
-                            <a href=""><img src="../../public/front/image/nav/5/5.jpg" alt="" width="160" height="110"></a>
-                                <a href=""><p class="name">小米手机5</p></a>
-                                    <a href=""><p class="price">1599元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img" style="border:none">
-                            <a href=""><img src="../../public/front/image/nav/5/6.jpg" alt="" width="160" height="110" ></a>
-                                <a href=""><p class="name">小米Max</p></a>
-                                    <a href=""><p class="price">1299元</p></a>
-                    </div>
-                </li>
-        </ul>
-        <!-- 路由器 -->
-        <ul>
-                <li>
-                    <div class="img">
-                    <a href="">
-                    <img src="../../public/front/image/nav/6/1.jpg" alt="" width="160" height="110"></a>
-                    <a href=""><p class="name">小米note2</p></a>
-                        <a href=""></a><p class="price">2799元</p></a>
-                    </div>
-                    
-                </li>
-                <li>
-                        <div class="img">
-                                <a href=""><img src="../../public/front/image/nav/6/2.png" alt="" width="160" height="110"></a>
-                                    <a href=""><p class="name">小米MIX</p></a>
-                                        <a href=""><p class="price">3499元</p></a>
-                        </div>
-                </li>
-                <li>     <div class="img">
-                        <a href=""><img src="../../public/front/image/nav/6/3.jpg" alt="" width="160" height="110"></a>
-                            <a href=""> <p class="name">小米5s</p></a>
-                                <a href=""><p class="price">1899元</p></a>
-                        </div>
-                </li>
-                <li>
-                    <div class="img">
-                            <a href=""><img src="../../public/front/image/nav/6/4.jpg" alt="" width="160" height="110"></a>
-                                <a href=""> <p class="name">小米5sPlUS</p></a>
-                                    <a href=""><p class="price">2299元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"> 
-                            <a href=""><img src="../../public/front/image/nav/6/5.jpg" alt="" width="160" height="110"></a>
-                                <a href=""><p class="name">小米手机5</p></a>
-                                    <a href=""><p class="price">1599元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img" style="border:none">
-                            <a href=""><img src="../../public/front/image/nav/6/6.jpg" alt="" width="160" height="110" ></a>
-                                <a href=""><p class="name">小米Max</p></a>
-                                    <a href=""><p class="price">1299元</p></a>
-                    </div>
-                </li>
-        </ul>
-     <!-- 路由器 -->
-        <ul>
-                <li>
-                    <div class="img">
-                    <a href="">
-                    <img src="../../public/front/image/nav/7/1.jpg" alt="" width="160" height="110"></a>
-                    <a href=""><p class="name">小米note2</p></a>
-                        <a href=""></a><p class="price">2799元</p></a>
-                    </div>
-                    
-                </li>
-                <li>
-                        <div class="img">
-                                <a href=""><img src="../../public/front/image/nav/7/2.jpg" alt="" width="160" height="110"></a>
-                                    <a href=""><p class="name">小米MIX</p></a>
-                                        <a href=""><p class="price">3499元</p></a>
-                        </div>
-                </li>
-                <li>     <div class="img">
-                        <a href=""><img src="../../public/front/image/nav/7/3.jpg" alt="" width="160" height="110"></a>
-                            <a href=""> <p class="name">小米5s</p></a>
-                                <a href=""><p class="price">1899元</p></a>
-                        </div>
-                </li>
-                <li>
-                    <div class="img">
-                            <a href=""><img src="../../public/front/image/nav/7/4.jpg" alt="" width="160" height="110"></a>
-                                <a href=""> <p class="name">小米5sPlUS</p></a>
-                                    <a href=""><p class="price">2299元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"> 
-                            <a href=""><img src="../../public/front/image/nav/7/5.jpg" alt="" width="160" height="110"></a>
-                                <a href=""><p class="name">小米手机5</p></a>
-                                    <a href=""><p class="price">1599元</p></a>
-                    </div>
-                </li>
-                <li>
-                    <div class="img" style="border:none">
-                            <a href=""><img src="../../public/front/image/nav/7/6.jpg"  alt="" width="160" height="110" ></a>
-                                <a href=""><p class="name">小米Max</p></a>
-                                    <a href=""><p class="price">1299元</p></a>
-                    </div>
-                </li>
-        </ul>                   
-    </div>
-</div>
+<?php include_once ROOT_PATH."view/front/nav_hide.html"?>
 </div>
 <div id="banner">
     <div class="b_main">
         <div class="b_m_pic">
                 <ul>
-                    <li><a href=""><img src="../../public/front/image/banner/1.jpg" alt=""></a></li>
-                    <li><a href=""><img src="../../public/front/image/banner/2.jpg" alt=""></a></li>
-                    <li><a href=""><img src="../../public/front/image/banner/3.jpg" alt=""></a></li>
-                    <li><a href=""><img src="../../public/front/image/banner/4.jpg" alt=""></a></li>
-                    <li><a href=""><img src="../../public/front/image/banner/5.jpg" alt=""></a></li>
+                    <li><a href=""><img src="../../public/front/image/bbbb.jpg" alt=""></a></li>
+                    <li><a href=""><img src="../../public/front/image/banner/bg_1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="../../public/front/image/banner/bg_2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="../../public/front/image/banner/bg_3.png" alt=""></a></li>
+                    <li><a href=""><img src="../../public/front/image/banner/bg_4.jpg" alt=""></a></li>
                 </ul>
         </div>
         <div class="b_m_tab">
@@ -361,11 +32,13 @@
     <div class="b_nav">
         <ul>
             <li class="firstLi">
-                <a href=""><span class="s1">手机 电话卡</span><span class="s2 iconfont icon-youjiantou1"></span></a>
+                <a href=""><span class="s1">光华  醋</span><span class="s2 iconfont icon-youjiantou1"></span></a>
                 <div class="info">
                     <ul>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/1.jpg" alt=""><span>小米Note2</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/2.jpg" alt=""><span>小米MIX</span></a><a href="" class="buy">选购</a></li>
+                        <?php foreach($category_result11 as $item):?>
+                        <li><a href="../user/details.php?id=<?=$item['id']?>" class="title"><img src="../../public/upload/<?=$item['image']?>" style="width:35px;height: 40px;" alt=""><span><?=$item['name']?></span></a><a href="../user/details.php?id=<?=$item['id']?>" class="buy">选购</a></li>
+                        <?php endforeach;?>
+                        <!-- <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/2.jpg" alt=""><span>小米MIX</span></a><a href="" class="buy">选购</a></li>
                         <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/3.jpg" alt=""><span>小米5s</span></a><a href="" class="buy">选购</a></li>
                         <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/4.jpg" alt=""><span>小米5s Plus</span></a><a href="" class="buy">选购</a></li>
                         <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/5.jpg" alt=""><span>小米手机5</span></a><a href="" class="buy">选购</a></li>
@@ -379,108 +52,61 @@
                         <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/13.jpg" alt=""><span>红米手机3x</span></a><a href="" class="buy">选购</a></li>
                         <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/14.jpg" alt=""><span>合约机</span></a><a href="" class="buy">选购</a></li>
                         <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/15.jpg" alt=""><span>对比手机</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/16.jpg" alt=""><span>小米移动电话</span></a><a href="" class="buy">选购</a></li>
+                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/16.jpg" alt=""><span>小米移动电话</span></a><a href="" class="buy">选购</a></li> -->
                     </ul>
                 </div>
             </li>
             <li class="firstLi">
-                <a href=""><span class="s1">笔记本 平板</span><span class="s2 iconfont icon-youjiantou1"></span></a>
+                    <a href=""><span class="s1">光华  酱</span><span class="s2 iconfont icon-youjiantou1"></span></a>
+                    <div class="info">
+                        <ul>
+                            <?php foreach($category_result14 as $item):?>
+                            <li><a href="../user/details.php?id=<?=$item['id']?>" class="title"><img src="../../public/upload/<?=$item['image']?>" style="width:35px;height:40px;" alt=""><span><?=$item['name']?></span></a><a href="../user/details.php?id=<?=$item['id']?>" class="buy">选购</a></li>
+                            <?php endforeach;?>
+                    </ul>
+                    </div>
+                </li>
+            <li class="firstLi">
+                <a href=""><span class="s1">光华  酱油</span><span class="s2 iconfont icon-youjiantou1"></span></a>
                 <div class="info">
                     <ul>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/1.jpg" alt=""><span>小米Note2</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/2.jpg" alt=""><span>小米MIX</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/3.jpg" alt=""><span>小米5s</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/4.jpg" alt=""><span>小米5s Plus</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/5.jpg" alt=""><span>小米手机5</span></a><a href="" class="buy">选购</a></li>
+                            <?php foreach($category_result12 as $item):?>
+                        <li><a href="../user/details.php?id=<?=$item['id']?>" class="title"><img src="../../public/upload/<?=$item['image']?>" style="width:35px;height:40px;" alt=""><span><?=$item['name']?></span></a><a href="../user/details.php?id=<?=$item['id']?>" class="buy">选购</a></li>
+                            <?php endforeach;?>
                     </ul>
                 </div>
             </li>
             <li class="firstLi">
-                <a href=""><span class="s1">电视 盒子</span><span class="s2 iconfont icon-youjiantou1"></span></a>
+                <a href=""><span class="s1">光华  料酒</span><span class="s2 iconfont icon-youjiantou1"></span></a>
                 <div class="info">
                     <ul>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/1.jpg" alt=""><span>小米Note2</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/2.jpg" alt=""><span>小米MIX</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/3.jpg" alt=""><span>小米5s</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/4.jpg" alt=""><span>小米5s Plus</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/5.jpg" alt=""><span>小米手机5</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/6.jpg" alt=""><span>小米Max</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/7.jpg" alt=""><span>红米4</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/8.jpg" alt=""><span>红米4A</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/9.jpg" alt=""><span>红米Note4</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/10.jpg" alt=""><span>红米Note3</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/11.jpg" alt=""><span>红米手机3s</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/12.jpg" alt=""><span>红米Pro</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/13.jpg" alt=""><span>红米手机3x</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/14.jpg" alt=""><span>合约机</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/15.jpg" alt=""><span>对比手机</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/16.jpg" alt=""><span>小米移动电话</span></a><a href="" class="buy">选购</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="firstLi">
-                <a href=""><span class="s1">路由器 智能硬件</span><span class="s2 iconfont icon-youjiantou1"></span></a>
-                <div class="info">
-                    <ul>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/1.jpg" alt=""><span>小米Note2</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/2.jpg" alt=""><span>小米MIX</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/3.jpg" alt=""><span>小米5s</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/4.jpg" alt=""><span>小米5s Plus</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/5.jpg" alt=""><span>小米手机5</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/6.jpg" alt=""><span>小米Max</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/7.jpg" alt=""><span>红米4</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/8.jpg" alt=""><span>红米4A</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/9.jpg" alt=""><span>红米Note4</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/10.jpg" alt=""><span>红米Note3</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/11.jpg" alt=""><span>红米手机3s</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/12.jpg" alt=""><span>红米Pro</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/13.jpg" alt=""><span>红米手机3x</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/14.jpg" alt=""><span>合约机</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/15.jpg" alt=""><span>对比手机</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/16.jpg" alt=""><span>小米移动电话</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/15.jpg" alt=""><span>对比手机</span></a><a href="" class="buy">选购</a></li>
-                        <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/16.jpg" alt=""><span>小米移动电话</span></a><a href="" class="buy">选购</a></li>
+                        <?php foreach($category_result13 as $item):?>
+                        <li><a href="../user/details.php?id=<?=$item['id']?>" class="title"><img src="../../public/upload/<?=$item['image']?>" style="width:35px;height:40px;" alt=""><span><?=$item['name']?></span></a><a href="../user/details.php?id=<?=$item['id']?>" class="buy">选购</a></li>
+                        <?php endforeach;?>
                     </ul>
                 </div>
                 </li>
             <li class="firstLi">
-                <a href=""><span class="s1">移动电源 电池 插线板 </span><span class="s2 iconfont icon-youjiantou1"></span></a>
+                <a href=""><span class="s1">光华  醋精 </span><span class="s2 iconfont icon-youjiantou1"></span></a>
                 <div class="info">
                     <ul>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/1.jpg" alt=""><span>小米Note2</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/2.jpg" alt=""><span>小米MIX</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/3.jpg" alt=""><span>小米5s</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/4.jpg" alt=""><span>小米5s Plus</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/5.jpg" alt=""><span>小米手机5</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/6.jpg" alt=""><span>小米Max</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/7.jpg" alt=""><span>红米4</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/8.jpg" alt=""><span>红米4A</span></a><a href="" class="buy">选购</a></li>
+                            <?php foreach($category_result15 as $item):?>
+                            <li><a href="../user/details.php?id=<?=$item['id']?>" class="title"><img src="../../public/upload/<?=$item['image']?>" style="width:35px;height:40px;" alt=""><span><?=$item['name']?></span></a><a href="../user/details.php?id=<?=$item['id']?>" class="buy">选购</a></li>
+                            <?php endforeach;?>
                 </ul>
                 </div>
             </li>
             <li class="firstLi">
-                <a href=""><span class="s1">耳机 音响</span><span class="s2 iconfont icon-youjiantou1"></span></a>
+                <a href=""><span class="s1">光华  礼包</span><span class="s2 iconfont icon-youjiantou1"></span></a>
                 <div class="info">
                     <ul>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/1.jpg" alt=""><span>小米Note2</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/2.jpg" alt=""><span>小米MIX</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/3.jpg" alt=""><span>小米5s</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/4.jpg" alt=""><span>小米5s Plus</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/5.jpg" alt=""><span>小米手机5</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/6.jpg" alt=""><span>小米Max</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/7.jpg" alt=""><span>红米4</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/8.jpg" alt=""><span>红米4A</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/9.jpg" alt=""><span>红米Note4</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/10.jpg" alt=""><span>红米Note3</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/11.jpg" alt=""><span>红米手机3s</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/12.jpg" alt=""><span>红米Pro</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/13.jpg" alt=""><span>红米手机3x</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/14.jpg" alt=""><span>合约机</span></a><a href="" class="buy">选购</a></li>
-                    <li><a href="" class="title"><img src="../../public/front/image/banner/nav/1/15.jpg" alt=""><span>对比手机</span></a><a href="" class="buy">选购</a></li>
+                        <?php foreach($category_result16 as $item):?>
+                        <li><a href="../user/details.php?id=<?=$item['id']?>" class="title"><img src="../../public/upload/<?=$item['image']?>" style="width:35px;height:40px;" alt=""><span><?=$item['name']?></span></a><a href="../user/details.php?id=<?=$item['id']?>" class="buy">选购</a></li>
+                        <?php endforeach;?>
                 </ul>
                 </div>
             </li>
-            <li class="firstLi">
+            <!-- <li class="firstLi">
                 <a href=""><span class="s1">保护套 贴膜</span><span class="s2 iconfont icon-youjiantou1"></span></a>
                 <div class="info"></div>
             </li>
@@ -495,7 +121,7 @@
             <li class="firstLi">
                 <a href=""><span class="s1">米兔 生活周边</span><span class="s2 iconfont icon-youjiantou1"></span></a>
                 <div class="info"></div>
-            </li>
+            </li> -->
 
         </ul>
 
@@ -503,7 +129,7 @@
 </div>
 <!-- benner end -->
 <!--ab strat  -->
-<div id="ad">
+<!-- <div id="ad">
     <div class="a_left">
         <ul>
             <li><a href=""><span class="iconfont icon-yijiuhuanxin"></span><span class="txt">选购手机</span></a><i class="right"></i><i class="bottom"></i></li>
@@ -519,7 +145,7 @@
             <a href=""><img src="../../public/front/image/ad/2.jpg" alt="" width="316" height="170" /></a>
             <a href=""><img src="../../public/front/image/ad/3.jpg" alt="" width="316" height="170" /></a>
         </div>
-</div>
+</div> -->
 <!-- db end -->
 <!-- star start -->
 <div id="star">
@@ -529,83 +155,62 @@
         </div>
         <div class="s_show">
             <ul>
+                <?php foreach($data as $item):?>
                 <li style="border-color:#ff3366;">
-                    <a href="" class="img">
-                        <img src="../../public/front/image/star/1.png" alt="" width="160" height="160"></a>
-                        <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
+                    <a href="../user/details.php?id=<?=$item['id']?>" class="img">
+                        <img src="../../public/upload/<?=$item['image']?>" alt="" width="160" height="160"></a>
+                        <a href="" class="title"><?=$item['name']?></a>
+                        <span class="dec"><?=$item['name']?></span>
+                        <span class="price"><?=$item['price']?></span>
                 </li>
-                <li style="border-color:#6666ff;">
-                    <a href="" class="img" >
-                        <img src="../../public/front/image/star/2.png" alt="" width="160" height="160"></a>
-                        <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
-                </li>
-                <li style="border-color:#00ff99;">
-                    <a href="" class="img">
-                        <img src="../../public/front/image/star/3.png" alt="" width="160" height="160"></a>
-                        <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
-                </li>
-                <li style="border-color:#cc9933;">
-                    <a href="" class="img">
-                        <img src="../../public/front/image/star/4.png" alt="" width="160" height="160"></a>
-                        <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
-                </li>
-                <li style="border-color:#0099ff;">
-                    <a href="" class="img">
-                        <img src="../../public/front/image/star/5.png" alt="" width="160" height="160"></a>
-                        <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
-                </li>
+                <?php endforeach;?>
             </ul>
             <ul>
+                <?php foreach($datatwo as $item):?>
                 <li style="border-color:#ff9999;">
-                    <a href="" class="img">
-                        <img src="../../public/front/image/star/6.png" alt="" width="160" height="160"></a>
-                        <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
+                    <a href="../user/details.php?id=<?=$item['id']?>" class="img">
+                            <img src="../../public/upload/<?=$item['image']?>" alt="" width="160" height="160"></a>
+                            <a href="" class="title"><?=$item['name']?></a>
+                            <span class="dec"><?=$item['name']?></span>
+                            <span class="price"><?=$item['price']?></span>
                 </li>
-                <li style="border-color:#cccc33;">
-                        <a href="" class="img">
-                            <img src="../../public/front/image/star/7.jpg" alt="" width="160" height="160"></a>
-                            <a href="" class="title">小米5sPlUS</a>
-                            <span class="dec">5.7英寸大屏拍摄手机</span>
-                            <span class="price">2229元</span>
-                    </li>
-                <li style="border-color:#33ffff;">
-                    <a href="" class="img">
-                        <img src="../../public/front/image/star/8.png" alt="" width="160" height="160"></a>
-                        <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
-                </li>
-                <li style="border-color:#0066cc;">
-                        <a href="" class="img">
-                            <img src="../../public/front/image/star/9.jpg" alt="" width="160" height="160"></a>
-                            <a href="" class="title">小米5sPlUS</a>
-                            <span class="dec">5.7英寸大屏拍摄手机</span>
-                            <span class="price">2229元</span>
-                </li>
-                <li class="last" style="border-color:#0066cc;">
-                        <a href="" class="img">
-                            <img src="../../public/front/image/star/10.jpg" alt="" width="160" height="160"></a>
-                            <a href="" class="title">小米5sPlUS</a>
-                        <span class="dec">5.7英寸大屏拍摄手机</span>
-                        <span class="price">2229元</span>
-                </li>                        
+                <?php endforeach;?>
             </ul>
         </div>
-        
-<script src="../../public/front/js/jquery-3.3.1.js"></script>
-<script src="../../public/front/js/index.js"></script>
+    <script src="../../public/front/js/jquery-3.3.1.js"></script>
+    <script src="../../public/front/js/index.js"></script>
 </div>
+    <div id="footer">
+        <div class="box">
+            <ul>
+                <li class="bold"><a href="">关于光华</a></li>
+                <li><a href=""></a><a href="">公司介绍</a></li>
+                <li><a href="">新闻中心</a></li>
+                <li><a href="">卓越成就</a></li>
+                <li><a href="">联系我们</a></li>
+            </ul>
+            <ul>
+                <li class="bold"><a href="">品牌介绍</a></li>
+                <li><a href="">品牌理念</a></li>
+                <li><a href="">卓越品质</a></li>
+                <li><a href="">精彩活动</a></li>
+            </ul>
+            <ul>
+                <li class="bold"><a href="">加入光华</a></li>
+                <li><a href="">校园招聘</a></li>
+                <li><a href="">校园招聘</a></li>
+                <li><a href="">招聘职位</a></li>
+            </ul>
+            <ul>
+                <li class="bold"><a href="">全球业务</a></li>
+                <li><a href="">校园招聘</a></li>
+                <li><a href="">校园招聘</a></li>
+                <li><a href="">招聘职位</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
 
 

@@ -1,0 +1,409 @@
+<?php include_once ROOT_PATH."view/front/header.html"?>
+</div>
+</div>
+</div>
+<?php include_once ROOT_PATH."view/front/nav_hide.html"?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin:0;
+    padding: 0;
+}
+textarea{
+    outline: none;
+    resize: none;
+}
+li{
+    list-style: none;
+}
+a{text-decoration: none;}
+button{
+    outline: none;
+    border: none;
+}
+#content_box{
+    margin: 50px auto;
+    width: 1226px;
+    height: 530px;
+}
+
+.c_b_left{
+    width: 613px;
+    height: 100%;
+    /*margin: 20px auto;*/
+    margin-top: 20px;
+    float: left;
+}
+.c_b_left img{
+ 
+    margin-left: 40px;
+}
+#content_box h2{
+font-weight: normal;
+font-size: 22px;
+height: 30px;
+line-height: 30px;
+}
+#content_box .c_b_right {
+    width: 613px;
+    height: 530px;
+    float: right;
+}
+#content_box .c_b_right p.explain{
+    color: #bbb;
+    font-size: 14px;
+
+}
+#content_box .c_b_right span.price{
+    font-size: 18px;
+    color: #F60;
+}
+#content_box .c_b_right span.o_price{
+    margin-left: 10px;
+    color: #888;
+    font-size: 13px;
+    font-weight: bold;
+}
+#content_box .c_b_right .c_r_bottom .c_r_add{
+    height: 80px;
+    background:whitesmoke;
+    line-height: 80px;
+    border: 1px solid #ddd;
+    text-indent:2em;
+}
+#content_box .c_b_right .c_r_bottom span.address{
+    font-size: 14px;
+}
+
+#content_box .c_b_right .c_r_bottom a.update{
+    font-size: 14px;
+    color: #F60;
+}
+
+#content_box .c_b_right .total{
+    margin-top: 30px;
+    width: 613px;
+    height: 130px;
+    background: whitesmoke;
+    text-indent: 2em;
+}
+#content_box .c_b_right .total span{
+    font-size: 14px;
+    /* font-weight: bold; */
+    color: #555;
+}
+#content_box .c_b_right .t_span{
+    padding-top: 30px;
+    text-indent: 2em;
+}
+#content_box .c_b_right .total p{
+    font-size: 20px;
+    color: #F60;
+    margin-top: 15px;
+}
+#content_box .c_b_right .c_r_top{
+    margin-top: 20px;
+}
+#content_box .c_b_right .t_btn a{
+    display: block;
+    line-height: 60px;
+    text-align: center;
+}
+#content_box .c_b_right .t_btn a.liji{
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    background-color: #F60;
+    cursor: pointer;
+    color: white;
+}
+#content_box .c_b_right .t_btn button.liji{
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    background-color: #F60;
+    cursor: pointer;
+    color: white;
+}
+#content_box .c_b_right .t_btn{
+    position: relative;
+    margin-top: 30px;
+}
+#content_box .c_b_right .t_btn a.like{
+    position: absolute;
+    right: 100px;
+    background: #bbb;
+    width: 150px;
+    color: white;
+    cursor: pointer;
+    height: 60px;
+    margin-left: 20px;    
+}
+#content_box  .c_b_right .c_r_top .explain{
+    margin: 20px 0 20px 0;
+}
+#content_box  .c_b_right .c_r_bottom .c_r_add{
+    margin-top: 20px;
+}
+#comment_text{
+    width: 1226px;
+    height: 250px;
+    /* position: relative; */
+    margin:  0 auto;
+}
+#comment_text .l_bottom{
+    /* position:  relative; */
+    float: left;
+    height: 120px;
+    margin-top: 40px;
+    margin-left: 40px;
+    /* margin: 50px 40px; */
+}
+#comment_text .l_bottom textarea{
+    border: 1px solid #ccc;
+    width: 900px;
+    height: 100px;
+   
+}
+#comment_text .l_submit{
+    width: 900px;
+    margin-left:40px;
+    float: left;
+    margin-bottom: 50px;
+}
+#comment_text .submit{
+    /* margin-top: 200px; */
+    /* margin-left: 228px; */
+    width: 100px;
+    height: 40px;
+    background-color: #F60;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+#cont_box{
+    width: 900px;
+    height: 80px;
+    margin-top: 80px;
+    margin-left: 180px;  
+    overflow: hidden;
+    /* border-bottom: 1px solid #ccc; */
+    /* margin-bottom: 50px; */
+}
+#cont_box p{
+    margin-top: 10px;
+    
+}
+#cont_box .img img{
+    border-image: 50%;
+    border-radius: 50%;
+}
+#cont_box .img_left{
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    /* overflow: hidden; */
+    float: left;
+}
+#cont_box .img_right{
+    width: 800px;
+    margin-left: 100px;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+
+div.pl{
+    /*margin-top:40px;*/
+    width: 900px;
+    margin-left: 180px;
+}
+.pl h2.h2{
+    margin-top:40px;
+    /*padding-left: 100px;*/
+    display: inline;
+    font-size: 22px;
+    font-weight: normal;
+}
+#box_left{
+    margin-top: 40px;
+    width: 900px;
+    height: 80px;
+    margin-left: 240px;  
+}
+#box_left p{
+    margin-top: 10px;
+}
+#box_left .cimg{
+    width: 50px;
+    margin-left: 30px;
+    height: 60px;
+    line-height: 60px;
+    /* overflow: hidden; */
+    float: left;
+}
+#box_left .img_right{
+    width: 800px;
+    /* margin-left: 100px; */
+    /* border-bottom: 1px solid #ccc; */
+}
+.xiaoxin{
+    position: absolute;
+    width: 300px;
+    height: 60px;
+    background-color: #bbb;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+}
+</style>
+
+<body>
+<!-- <form action="../../front/user/comment.php?id=<?=$data_id['id']?>" method="POST" enctype="multipart/form-data"> -->
+    <div id="content_box">
+        <div class="c_b_left">
+            <img src="../../public/upload/<?=$data_id['image']?>" alt="" style="width:460px;" height="480px;">
+        </div>
+        <div class="c_b_right">
+            <div class="c_r_top">
+                <h2 class="title">
+                    <?=$data_id['name']?>
+                </h2>
+                <p class="explain">
+                    <!-- 轻薄美观的拍照手机 / 前置2000万“治愈系”自拍 / 后置2000万 AI双摄 / 标配骁龙660 AIE处理器 -->
+                    <?=$data_id['explain']?>
+                </p>
+                <span class="price"><?=$data_id['price']?>元</span>
+                <span class="o_price"><del><?=$data_id['o_price']?>元</del></span>
+            </div>
+
+            <div class="c_r_bottom">
+                <div class="c_r_add">
+                    <span class="address">辽宁本溪市本溪满族自治县东营房乡</span>
+                    <a href="" class="update">
+                        修改
+                    </a>
+                </div>
+                <div class="total">
+                    <div class="t_span">
+                    <span class="t_name"><?=$data_id['ml']?>ML毫升</span>
+                    <!-- <span class="t_volume">4GB+64GB</span> -->
+                    </div>
+                    <p class="iflashbuy">闪购价:<?=$data_id['price']?>元</p>
+                </div>
+                <form action="../../front/user/shopping.php?id=<?=$data_id['id']?>" method="POST">
+                <div class="t_btn">
+                <?php 
+                if(isset($_SESSION['user'])){
+                ?>
+                
+                <?php
+                if(in_array($data_id['id'],$arr2)){?>
+                <!-- <?php echo $data_id['id'] ?> -->
+                <p class="xiaoxin">已经加入购物车</p>
+                <a href="" class="like">喜欢</a>
+                <?php
+                }else{
+                    ?>
+                    <button class="liji">加入购物车</button>
+                    <a href="" class="like">喜欢</a>
+                <?php
+                }
+                ?>
+                <?php  
+                }else{
+                ?>
+                <a href="../../front/user/login.php" class="liji">请登录后评论</a>
+                <a href="" class="like">喜欢</a>
+                <?php
+                }
+                ?>
+                </div>
+            </form>
+            </div>
+
+    </div>
+    </div>
+    <?php 
+    if(isset($_SESSION['user'])){
+    ?>
+    <form action="../../front/user/comment.php?id=<?=$data_id['id']?>" method="POST" enctype="multipart/form-data">
+    <div class="pl">
+        <h2 class="h2">留言</h2>
+    </div>
+    <input type="hidden" name="id">
+    <div id="comment_text">
+            <div class="l_bottom">
+                <textarea name="comment" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="l_submit">
+                <button class="submit">提交</button>
+             </div>
+    </div>
+</form>
+    <?php  
+    }else{
+    ?>
+    <?php
+    }
+    ?>
+    <?php foreach($result_comment as $item):?>
+    <?php endforeach;?>
+    <?php 
+    if(isset($item['username'])){
+    ?>
+    <div class="pl">
+        <h2 class="h2">用户评论</h2>
+    </div>
+    <?php  
+    }else{
+    ?>
+    <?php
+    }?>
+
+    <?php foreach($result_comment as $item):?>
+            <div id="cont_box">
+                <li>
+                    <div class="img_left">
+                        <img src="../../public/upload/<?=$item['image']?>" alt="" style="border-radius:50%"; width="60" height="60"></a>
+                        </div>
+                        <div class="img_right">
+                        <span>用户: <?=$item['username']?></span><br>
+                        <span>评论时间:<?=$item['addtime']?></span>
+                        <p><?=$item['content']?></p>
+                    </div>
+                </li>
+            </div>
+            <?php foreach($dataresult as $value):?>
+            <?php foreach($value as $idem):?>
+            <?php if($item['c_id'] == $idem['c_id']){?>
+            <div id="box_left">
+                <li>
+                    <div class="cimg">
+                        <img src="../../public/upload/<?=$idem['r_image']?>" alt="" style="border-radius:50%"; width="30" height="30"></a>
+                        </div>
+                        <div class="img_right">
+                        <span>用户: <?=$idem['r_username']?></span><br>
+                        <p><?=$idem['r_content']?></p>
+                    </div>
+                </li>
+            </div>
+            <?php }else{?>
+                <!-- <?php echo $item['c_id']?> -->
+            <?php }?>
+            <?php endforeach;?>
+           <?php endforeach;?>
+    <?php endforeach;?>
+</body>
+
+
+</html>
+<?php include_once ROOT_PATH."view/front/footer.html"?>

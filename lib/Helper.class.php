@@ -16,7 +16,7 @@ class Helper{
         else
         {
             $returnUrl=$_SERVER["REQUEST_URI"];
-            header("Location:../../admin/user/login.php?returnUrl=".$returnUrl);
+            header("Location:../../admin/user/admin-login.php?returnUrl=".$returnUrl);
             exit;
         }
     }
@@ -29,7 +29,7 @@ class Helper{
         else
         {
             $returnUrl=$_SERVER["REQUEST_URI"];
-            header("Location:../../front/user/login.php?returnUrl=".$returnUrl);
+            header("Location:../../front/user/admin-login.php?returnUrl=".$returnUrl);
             exit;
         }
     }
