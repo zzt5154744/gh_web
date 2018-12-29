@@ -10,6 +10,8 @@ include_once ROOT_PATH."front/vinegar/nav_hide.php";
 $result =  $vinegar->selectMany(['tab'=>1],'0,5',['addtime'=>'desc']);
 $result_two =  $vinegar->selectMany(['tab'=>1],'5,10',['addtime'=>'desc']);
 $data = $result;
-
 $datatwo = $result_two;
+
+
+
 include_once ROOT_PATH.'view/front/home/index.html';

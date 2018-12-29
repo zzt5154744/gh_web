@@ -1,4 +1,5 @@
 <?php include_once ROOT_PATH."view/front/header.html"?>
+</form>
 </div>
 </div>
 </div>
@@ -139,9 +140,11 @@
 
         <div class="right_list">
                     <div class="details">
-                            <h2>企业里程碑</h2>
+                            <?php foreach($result as $item):?>
+                            <h2><?=$item['title']?></h2>
                             <br>
-                            光华跨越三个世纪，历经几代人的艰苦奋斗，让我们与您一起细细品味这个家喻户晓的品牌传奇。
+                            <?=$item['introduce']?>
+                            <!-- 光华跨越三个世纪，历经几代人的艰苦奋斗，让我们与您一起细细品味这个家喻户晓的品牌传奇。 -->
                         <br><br>
                     <div class="item">
                         <div class="img">
@@ -149,8 +152,8 @@
                          <p>光华创始人-孙志国先生</p>
                         </div>
                         <div class="right">
-                            <p class="nian">1888年   发明耗油,创立光华</p>
-                            <p>光华创始人-孙志国先生在中国南海沿岸广东省南水乡发明蚝油，并成立李锦记，生产及销售蚝油和虾酱两种产品</p>
+                            <p class="nian"><?=$item['year']?></p>
+                            <p><?=$item['introduce']?></p>
                         </div>
                     </div>
 
@@ -160,13 +163,14 @@
                          <p>光华创始人-孙志国先生</p>
                         </div>
                         <div class="right">
-                            <p class="nian">1888年   发明耗油,创立李锦记耗油庄</p>
-                            <p>光华创始人-孙志国先生先生在中国南海沿岸广东省南水乡发明蚝油，并成立李锦记，生产及销售蚝油和虾酱两种产品</p>
+                            <p class="nian"><?=$item['year']?></p>
+                            <p><?=$item['introduce']?></p>
                         </div>
                     </div>
                     <div class="video">
                         <span>企业视频</span>
                     </div>
+                    <?php endforeach;?>
          </div>
          </div>
     </div>

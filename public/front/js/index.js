@@ -182,3 +182,37 @@
         },6000);
     };
 })();
+
+
+ //搜索按钮
+//  (#nav .n_search .n_s_btn .icon-sousu) 
+ //文本框
+//  (#nav .n_search .n_s_input input)
+ //大区域
+//  (#nav .n_search .n_s_input .hide ul)
+
+
+(function(){
+    var search = $("#nav .n_search .n_s_btn button");
+    var input = $("#nav .n_search .n_s_input #input");
+    var hidetow = $("#nav .n_search .n_s_input .hide");
+    var hide = $("#nav .n_search .n_s_input .hide ul li span.s1");
+    $("input").bind('input propertychange',function(){
+        for(var i=0;i<hide.length;i++){
+        var val = $("#nav .n_search .n_s_input #input").val().trim();
+         $(hide[i]).html($(hide[i]).html().replace(val,`<span class="span">${val}</span>`));
+        }
+    })
+
+})();
+
+// function log(data){
+//     var input = $("#nav .n_search .n_s_input #input").val();
+//     $.post("../../front/vinegar/list_vinegar.php",{
+//         dataType:"json",
+//         "v_name":input
+//     },function(data){
+
+        // alert("添加成功");
+    // })
+// }

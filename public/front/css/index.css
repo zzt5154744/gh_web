@@ -17,6 +17,11 @@
        outline:none;
        color: black;
    }
+   button{
+       border: none;
+    text-decoration: none;
+    outline:none;
+   }
    body{
        min-width: 1226px;
        background: #fff;
@@ -31,7 +36,7 @@
             position:relative;
            background:rgb(51,51,51);
            height: 40px;
-           z-index: 99;
+           z-index: 90;
    }
    #h-mian{
        width: 1226px;
@@ -89,7 +94,6 @@
        color: #b0b0b0;
        font-size: 12px;
        position: relative;
-       z-index: 2;
    }
    #header .h_m_r_buy a.buy:hover{
        color: #f60;
@@ -112,9 +116,7 @@
    line-height: 80px;
    box-shadow: 0 0 1px #666;
    display: none;
-   /* z-index: 99; */
    color: #666;
-   /* text-align: center; */
    }
    #header .h_m_r_buy .hide .h_shop{
        text-align: center;
@@ -198,7 +200,7 @@
        width: 100%;
        height: 69px;
        margin-top: 20px;
-       width:100%; height:69px; margin-top:20px; position:relative; background:#fff; z-index:98;
+       width:100%; height:69px; margin-top:20px; position:relative; background:#fff; z-index:50;
    }
    #nav .nav_content{
        width: 1226px;
@@ -238,6 +240,7 @@
    }
 #nav .nav_list{
     position: relative;
+    z-index: 2;
     width: 1226px;
     height: 70px;
     margin: 0 auto;
@@ -267,11 +270,12 @@
        color: #f60;
    }
    
-   #nav .nav_hide{
+    #nav .nav_hide{
        background: #fff;
        width: 100%;
        height: 230px;
        position: absolute;
+       z-index: 2;
        top: 138px;
        left: 0;
        border-top: 1px solid #ddd;
@@ -339,9 +343,11 @@
        float: left;
        border-right: none;
    }
-   #nav .n_search .n_s_btn{
+   #nav .n_search .n_s_btn button{
        width: 50px;
-       height: 47px;
+       height: 50px;
+       background: #fff;
+       cursor: pointer;
        border: 1px solid #ccc;
        float: right;
        line-height: 47px;
@@ -353,11 +359,19 @@
    #nav .n_search .n_s_btn span{
        font-size: 20px;
    }
-   #nav .n_search .n_s_btn:hover{
+   #nav .n_search .n_s_btn button:hover{
        background: #f60;
        color: #fff;
        border: #f60;
    }
+   /* #nav .n_search .n_s_btn button{
+    text-decoration: none;
+    outline:none;
+    border: none;
+    width:25px;
+    height: 40px;
+    background-color: #fff;
+   } */
    #nav .n_search .n_s_input input{
        width: 246px;
        height: 47px;
@@ -397,6 +411,9 @@
        position: absolute;
        top: 48px;
        left: -1px;
+   }
+   #nav .n_search .n_s_input .hide ul .span{
+       color: #f60;
    }
    #nav .n_search .n_s_input .hide li{
        height: 30px;
@@ -648,7 +665,7 @@
        margin-left: 16px;
    }
    
-   
+
    
    /* star */
    /* #star{width: 1226px;height: 400px;margin: 0 auto;background: #fff;overflow: hidden;position: relative;}

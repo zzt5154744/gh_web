@@ -10,6 +10,8 @@
     $user = new User();
     $pdo = new MyPDO();
 
+    
+
     if (isset($_SESSION['user'])) {
         $user_id = $_SESSION['user']['id'];
         }else{

@@ -5,7 +5,11 @@ include_once ROOT_PATH."model/Vinegar.class.php";
 include_once ROOT_PATH."model/Comment.class.php";
 include_once ROOT_PATH."model/Category.class.php";
 include_once ROOT_PATH."model/reply_view.class.php";
-Helper::checkLogin();
+
+$role = $_SESSION['user']['role'];
+if($role ==1 ){
+    Helper::checkLogin();
+}
 $user = new User();
 $vinegar = new Vinegar();
 $comment = new Comment();

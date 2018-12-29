@@ -1,0 +1,31 @@
+<?php include_once ROOT_PATH."view/front/header.html"?>
+</form>
+</div>
+</div>
+</div>
+<?php include_once ROOT_PATH."view/front/nav_hide.html"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/front/css/list_vinegar.css">
+</head>
+<body>
+    <div id="content">
+        <div class="smart">
+                <div class="c_s_right">
+                    <ul>
+                        <?php foreach($result as $item):?>
+                        <li class=""><a href="../../front/user/details.php?id=<?=$item['id']?>"><img src="../../public/upload/<?=$item['image']?>" alt="" width="160" height="160"><a href="../../front/user/details.php?id=<?=$item['id']?>"" class="title"><?=$item['name']?></a><span class="dec"><?=$item['explain']?></span><span class="price"><?=$item['price']?></span></a></li>
+                        <?php endforeach;?>
+                    </ul>
+                </div>
+        </div>
+    </div>
+    <script src="../../public/front/js/jquery-3.3.1.js"></script>
+    <script src="../../public/front/js/index.js"></script>
+</body>
+</html>

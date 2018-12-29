@@ -1,8 +1,10 @@
 <?php include_once ROOT_PATH."view/front/header.html"?>
+</form>
 </div>
 </div>
 </div>
 <?php include_once ROOT_PATH."view/front/nav_hide.html"?>
+</div>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,10 +32,6 @@
             width: 100%;
             border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
-            /* height: 20px; */
-            /* text-align: center; */
-            /* margin-left: 50px;  */
-            /* padding-left: 100px; */
         }
         #jianjie .details{
             width: 700px;
@@ -43,9 +41,6 @@
             font-size: 12px;
             height: 250px;
             line-height: 25px;
-            /* text-indent: 5em; */
-            /*text-align: center;*/
-            /*text-align: center;*/
             letter-spacing:2px;
         }
 
@@ -96,16 +91,21 @@
 
         <div class="right_list">
                     <div class="details">
+                        <?php foreach($com_result as $item):?>
                             <h2>公司介绍</h2>
                             <br>
-                        丹东光华酿造有限公司简介 丹东光华酿造有限公司坐落于丹东市元宝区光华路1号，已有70多年的生产调味品的历史，2004年由国企转
-                         制为股份有限责任公司， 占地23亩，建筑面积8000平方米，系丹东市最大的专业生产调味品企业，中国调味品协会会员单位。
+                            <?=$item['introduce']?>
+                        <!-- 丹东光华酿造有限公司简介 丹东光华酿造有限公司坐落于丹东市元宝区光华路1号，已有70多年的生产调味品的历史，2004年由国企转
+                         制为股份有限责任公司， 占地23亩，建筑面积8000平方米，系丹东市最大的专业生产调味品企业，中国调味品协会会员单位。 -->
                         <br><br>
-                            公司注册资本500万元， 资产总值3000余万元。公司2000年起被授予“辽宁省放心食品示范企业”。
+                            <?=$item['introduce_j']?>
+                            <!-- 公司注册资本500万元， 资产总值3000余万元。公司2000年起被授予“辽宁省放心食品示范企业”。 -->
                         <br><br>
-                        丹东“AAA级放心食品生产企业”，丹东市
-                                第二批市级农业 产业化重点龙头企业，国家工业产品生产许可证获证单位，辽宁省“守合同、重信用企业“。
-         </div>
+                            <?=$item['introduce_h']?>
+                        <!-- 丹东“AAA级放心食品生产企业”，丹东市
+                                第二批市级农业 产业化重点龙头企业，国家工业产品生产许可证获证单位，辽宁省“守合同、重信用企业“。 -->
+                        <?php endforeach;?>
+                   </div>
          </div>
     </div>
     <script>

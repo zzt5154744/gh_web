@@ -12,6 +12,7 @@
 </head>
 
 <body>
+        
     <!-- header start -->
         <div id="header">
                 <div class="h_title">
@@ -28,6 +29,7 @@
             <div class="m_login">
                 <div class="m_headr">
                     <form id="form1" onsubmit="return false" action="##" method="post">
+                    <input class="spanmark" type="hidden" name="spanmark" value="<?php $mark?>" style="display:block">
                     <h2>账号注册</h2>
                     <div class="mark">注册成功</div>
                     <div class="m_user">
@@ -72,7 +74,7 @@
                 "phone_number":phone_number,
                 "email":p_email,
                 "password":p_pwd,  
-            },function(data){
+            },function(){
                 let email=/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
                 let password=/^[0-9a-zA-Z_@.?`~#%^&*()+='/|;<>,!-]{6,16}$/;
                 let use= /^[0-9a-zA-Z_.]{1,18}$/;
@@ -117,13 +119,17 @@
                     p_confirmpassword.innerHTML = "确认密码不能为空！";
                     return;
                 }
-                $("#main .m_login .m_headr .mark").fadeToggle(2000);
+                var mark = $("#main m_login m_headr #form1 .spanmark").val();
+                console.log(mark);
+                if(mark == 1){
+                 alert("注册失败用户名已经存在");
+                }else{
+                    $("#main .m_login .m_headr .mark").fadeToggle(2000);
                 var t1 = window.setTimeout(afn,1000);
                 function afn(){
                     $("#main .m_login .m_headr .mark").fadeToggle(2000);
-                }                 
-
-
+                } 
+                }
 
                 $("input[name='username']").val("");
                 $("input[name ='phone_number']").val("");
