@@ -1,0 +1,439 @@
+<?php include_once ROOT_PATH."view/front/header.html"?>
+</form>
+</div>
+</div>
+</div>
+<?php include_once ROOT_PATH."view/front/nav_hide.html"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../public/admin/js//xadmin.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{text-decoration: none;}
+button{
+    outline: none;
+    border: none;
+}
+    #box {
+        width: 100%;
+        height: 100px;
+        border-bottom:  2px solid #f60;
+        background: white;
+    }
+    #box .header{
+        width: 1226px;
+        margin: 0 auto;
+    }
+    #box .header .h_left{
+        width: 700px;
+        float: left;
+        line-height: 80px;
+    }
+    #box .header .h_right{
+        float: right;
+        margin-top: 10px;
+        width: 520px;
+        height: 100px;
+        line-height: 80px;
+    }
+    #box .header .h_left .img {
+        display: inline;
+        width: 80px;
+    }
+    #box .header .h_left .img .logo{
+        margin-top: 25px;
+        background: #f60;
+    }
+    #box .header .h_left .gouwu{
+        margin-top: 10px;
+        float: right;
+        width: 620px;
+    }
+
+    #box .header .h_left .gouwu .g_car{
+        font-size: 25px;
+        color: #333;
+        font-weight: normal;
+    }
+    #box .header .h_left .gouwu .inform{
+        font-size: 12px;
+        color: #777;
+        margin-left: 20px;
+    }
+    #box .header .h_right .r_user{
+        font-size: 12px;
+        margin-left: 330px;
+    }
+    #box .header .h_right .r_user a{
+        margin-left: 20px;
+        color: #333;
+        cursor: pointer;
+    }
+    #main{
+    }
+    #main .m_main{
+        margin-top: 120px;
+        margin-left: 20%;
+    }
+    #main .m_main .panel{
+        margin: 30px;
+    }
+    #main .m_main .panel .h2{
+        font-size: 30px;
+        color: #777;
+    }
+    #main .m_main .panel .list{
+        width: 1100px;
+        height: 50px;
+        margin-top: 30px;
+        font-size: 16px;
+        /* color: #777; */
+    }
+    /* #main .m_main .panel .list .state:first-child{ */
+        /* color: #f60; */
+    /* } */
+    #main .m_main .panel .list li a{
+        color: #555;
+    }
+    #main .m_main .panel .list li a.mark:first-child{
+        color: #f60;
+    }
+    #main .m_main .panel .list li{
+        /* width: 120px; */
+        /* color: #777; */
+        margin-right: 20px;
+        float: left;
+        text-align: center;
+    }
+    #main .m_main .panel ul li a{
+        margin-right: 20px;
+    }
+    #main .m_main .panel .list li span{
+        color: #ccc;
+        font-weight: normal;
+    }
+    #main .m_main .panel .payment .p_top{
+        width: 800px;
+        height: 100px;
+        background: rgb(255, 250, 247);
+        margin-top: 10px;
+        border: 1px solid #f60;
+        border-bottom: none;
+    }
+    #main .m_main .panel .payment .p_top .title{
+        font-size: 18px;
+        color: #f60;
+        /* margin-top: 20px; */
+        margin: 20px 0 15px 10px;
+        /* margin-bottom: 15px; */
+    }
+    #main .m_main .panel .payment .p_top .time{
+        float: left;
+        width: 500px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 10px;
+        font-size: 14px;
+        color: #777;
+    }
+    #main .m_main .panel .payment .p_top .right{
+        height: 30px;
+        line-height: 30px;
+        margin-right: 10px;
+        display: inline;
+        float: right;
+    }
+    #main .m_main .panel .payment .p_top .right .text{
+        font-size: 14px;
+        color: #777;
+    }
+    #main .m_main .panel .payment .p_top .right .price{
+        font-size: 25px;
+        color: black;
+    }
+    #main .m_main .panel .payment .p_bottom{
+        width: 800px;
+        height: 250px;
+        border: 1px solid #f60;
+        background: white;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_left{
+        width: 100%;
+        height: 100%;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_right{
+        float:right;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_right button{
+        width: 100px;
+        height: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_right button.liji{
+        background: #f60;
+        color: whitesmoke;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_right button.xiaoliji{
+        background: #444;
+        color: whitesmoke;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_right button.detail{
+        border: 1px solid #ccc;
+        background: white;
+        color: #444;
+    }
+    /* #main .m_main .panel .payment .p_bottom .produce  */
+    #main .m_main .panel .payment .p_bottom .produce .p_left li{
+        width: 550px;
+        /* height: 70px; */
+        font-size: 14px;
+        color: #444;
+        /* background: white; */
+        /* float: left; */
+        /* height: 80px; */
+        /* line-height: 80px; */
+        margin-left: 20px;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_left li span{
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    #main .m_main .panel .payment .p_bottom .produce .p_left li img{
+        margin-top: 20px;
+        margin-right: 20px;
+        display: inline;
+    }
+    body{
+        /* background: rgb(245, 245, 245); */
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="main"> 
+        <!-- 主面板 -->
+        <div class="m_main">
+            
+            <div class="panel">
+            <p class="h2">
+                我的订单
+            </p>
+            <ul class="list">
+                <li><a class="mark"  href="../../front/user/order.php">全部订单</a><span>|</span></li>
+                <?php foreach($allorder as $item):?>
+                <li><a class="mark"  href="../../front/user/order.php?state_id=<?=$item['id']?>"><?=$item['state']?></a><span>|</span></li>
+                <!-- <li><a href="../../front/user/order.php?o_id=2"><?=$await?>（2）</a><span>|</span></li> -->
+                <!-- <li><a href="../../front/user/order.php?o_id=3"><?=$take?></a><span>|</span></li> -->
+                <!-- <li><a href="../../front/user/order.php?o_id=4"><?=$cancel?></a></li> -->
+                <?php endforeach;?>
+            </ul>
+            <?php foreach($data as $item):?>
+            <!-- <?php if($item['state_id'] == 3 && $result == null)?>
+
+                <div>没有待收货的物品</div>
+
+            <?php?> -->
+            <div class="payment">
+                <div class="p_top">
+                    <?php if($item['state_id'] == 3){?>
+                    <p class="title">
+                            等待发货
+                    </p>
+                    <?php }else{?>
+                    <p class="title">
+                            等待付款
+                    </p>
+                    <?php }?>
+                    <p class="time">
+                        <span><?=$item['addtime']?> | </span> 
+                        <span><?=$item['consignee']?> |</span>
+                        <span>订单号:&nbsp;&nbsp;<?=$item['o_id']?> | </span>
+                        <span>在线支付</span>
+                    </p>
+                    <p class="right">
+                        <span class="text">订单金额:</span>
+                        <span class="price"><?=$item['sum']?></span>
+                        <span class="text">元</span>
+                    </p>
+                </div>
+                
+           
+                <div class="p_bottom">
+                    <div class="produce">
+                        <div class="p_right">
+                                <!-- <button class="liji" onclick="liji(this,'<?=$item['o_id']?>')">立即支付</button><br> -->
+                                <?php if($item['state_id'] == 3){?>
+                                    <button type="submit" class="xiaoliji">已支付</button><br> 
+
+                                <?php }else{ ?> 
+                                    <button type="submit" class="liji" onclick="liji(this,'<?=$item['o_id']?>')">立即支付</button><br> 
+                                <?php }?>
+                                
+                                <button class="detail">订单详情</button>
+                        </div>
+                        <ul class="p_left">
+                        <?php foreach($arr as $value):?>
+                            <?php foreach($value as $idem):?>
+                            <?php if($idem['o_id'] == $item['o_id']){?>
+                            <li>
+                                <img src="../../public/upload/<?=$idem['image']?>" style="width:40px;height:40px;"p alt="">
+                                <span><?=$idem['v_name']?></span>
+                                <!-- <span><?=$item['price']?>元&nbsp;x&nbsp;<?=$item['num']?></span> -->
+                            </li>
+                            <?php }else{?>
+                                <!-- <?php echo $item['c_id']?> -->
+                            <?php }?>
+                             <?php endforeach;?>
+                         <?php endforeach;?>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+            <?php endforeach;?>
+            </div>
+            
+        </div>
+        
+    </div>
+    <script>
+        //         layer.confirm('确认要删除这条商品吗？',function(index){
+        // $.post('http://localhost:8088/PHP/PHP_zzt/front/user/shop-del.php',{id:id},function(data){
+        //     $(obj).parents("ul").remove();
+        //     layer.msg('已删除!',{icon:1,time:1000});
+                
+        //     });
+        function member_del(obj,id){
+        layer.confirm('确认要删除这条商品吗？',function(index){
+            //发异步删除数据
+            $.post('http://localhost:8088/PHP/PHP_zzt/front/user/shop-del.php',{id:id},function(data){
+            $(obj).parents("ul").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+                
+            });
+
+        });
+        }
+        function liji(obj,id){
+        layer.confirm('确定要支付吗？',function(index){
+            //发异步删除数据
+            console.log(obj);
+            console.log(id);
+            $.post('http://localhost:8088/PHP/PHP_zzt/front/user/addply.php',
+            {id:id},
+            function(data){
+            layer.msg('支付成功!',{icon:1,time:1000});
+            });
+
+        });
+        }
+        (function(){
+        var  edit =  $("#main .m_main .m_address");
+        var  cancel = $("#b_main .bottom .cancel");
+        var  close = $("#b_main .basics .top .close .guan");
+            // console.log(edit);
+            edit.click(function(){
+                $("#b_main").css("display","block");
+            })
+            cancel.click(function(){
+                $("#b_main").css("display","none");
+            })
+            close.click(function(){
+                $("#b_main").css("display","none");
+            })
+        })();
+
+        (function(){
+       var edit = $("#p_main .image .i_img li");
+       edit.click(function(){
+           alert(1);
+                $("#img_main").css("display","block");
+            })
+
+        })();
+        var left_btn = document.getElementsByClassName("add");
+        var right_btn = document.getElementsByClassName("adc");
+        var inp = document.getElementsByClassName('inpclass');
+        var xiaoji = document.getElementsByClassName('xiaoji2');
+        var price = document.getElementsByClassName('price');
+        var sum = document.getElementsByClassName('sumprice')[0];
+            for(var i=0;i<right_btn.length;i++){
+            // console.log(sumtotal);
+            right_btn[i].index = i;
+            right_btn[i].onclick = function(){
+            var text = document.getElementsByClassName("val");
+            var val = ++text[this.index].innerHTML;
+            var id = inp[this.index].value;
+            pricecount = price[this.index].innerHTML;
+            var xiaoji2 = xiaoji[this.index].innerHTML;
+            // sum.innerHTML;]
+            var that = this;
+            $.post("../../front/user/addnum.php",{
+                dataType: "json",//预期服务器返回的数据类型
+                "s_id":id,
+                "num":val,
+            },function(){
+                xiaoji[that.index].innerHTML = pricecount * val+"元";
+                addc = parseInt(xiaoji[that.index].innerHTML);
+                // sum.innerHTML += pricecount * val;
+                var sumtotal = 0;
+                for(var j =0;j<right_btn.length;j++){
+                    sumtotal+= parseInt(xiaoji[j].innerHTML);
+                }
+                  sum.innerHTML  = sumtotal;
+            })
+        }
+        }
+        
+
+    for(var j=0;j<left_btn.length;j++){
+            left_btn[j].index = j;
+            left_btn[j].onclick = function(){
+            var text = document.getElementsByClassName("val");
+            var val = --text[this.index].innerHTML;
+            var id = inp[this.index].value;
+            pricecount = price[this.index].innerHTML;
+            var xiaoji2 = xiaoji[this.index].innerHTML;
+            if(text[this.index].innerHTML < 1){
+                text[this.index].innerHTML = 1;
+            }
+            var thist = this;
+            $.post("../../front/user/addnum.php",{
+                dataType: "json",//预期服务器返回的数据类型
+                "s_id":id,
+                "num":val,
+            },function(){
+                xiaoji[thist.index].innerHTML = pricecount * val+"元";
+                var sumtotal = 0;
+                for(var j =0;j<right_btn.length;j++){
+                    sumtotal+= parseInt(xiaoji[j].innerHTML);
+                }
+                  sum.innerHTML  = sumtotal;
+            })
+        }
+        }
+
+     
+
+
+    </script>
+    <script src="../../public/front/js/jquery-3.3.1.js"></script>
+</body>
+</html>

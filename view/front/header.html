@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="潇洒">
     <link rel="stylesheet" href="../../public/front/css/index.css">
     <link rel="stylesheet" href="../../public/front/font/iconfont.css">
+    <link rel="stylesheet" href="../../public/front/css/balance.css">
     <title>Zzt_PHP大作业</title>
 </head>
 <body>
@@ -29,6 +30,8 @@
                     <li><a class="user_login"><?=$_SESSION['user']['username']?> 欢迎您</a>|</li>
                     <li><a href="../../front/user/logout.php">退出</a>|</li>
                     <li class="person"><a class="person" href="../../front/user/person.php?id=<?=$_SESSION['user']['id']?>">个人中心</a>|</li>
+                    <li class="person"><a class="person" href="../../front/user/order.php">我的订单</a>|</li>
+                    <li class="balance"><a class="balance">充值</a>|</li>
                     <?php
                         }else{
                     ?>
@@ -61,16 +64,14 @@
                             </div>
                             <div class="content">
                             <span><?=$item['v_name']?></span>
-                            <span><?=$item['price']?></span>
+                            <span><?=$item['price']?></span><span>&nbsp;&nbsp;x&nbsp;&nbsp;<?=$item['num']?></span>
                         </div>
                         </div>
                         <?php endforeach;?>
                         <?php
                         if($count==(0)){
                         ?>
-                                    <!-- <div class="h_main"> -->
                                     <p class="h_shop">购物车里面没有内容,赶紧选购吧！</p> 
-                                     <!-- </div> -->
                         <?php 
                         }else{
                             ?>
@@ -97,9 +98,7 @@
         <div class="h_m_r_buy">
             <a href="" class="buy"><span class="iconfont icon-gouwuche1"></span>购物车(0)</a>
             <div class="hide">
-                <!-- <div class="h_main"> -->
                 <p class="h_shop">购物车里面没有内容,赶紧选购吧！</p> 
-                 <!-- </div> -->
             </div>
         </div>
         <?php
@@ -135,10 +134,43 @@
                     <li class="product"><a><img src="../../public/front/image/bz/bz4.gif" style="width: 68px;height: 60px;" alt=""></a></li>
                     <li class="product"><a><img src="../../public/front/image/bz/bz6.png" style="width: 68px;height: 60px;" alt=""></a></li>
                     <li class="product"><a><img src="../../public/front/image/bz/bz5.gif" style="width: 68px;height: 60px;" alt=""></a></li>
-                    <!-- <li class="product"><a href="">服务</a></li> -->
-                    <!-- <li class="product"><a href="">社区</a></li> -->
                 </ul>
             </div>
+
+   <!-- 弹出页面 -->
+   <div id="addb_main" style="">
+    <div class="basics">
+        <div class="top">
+            <div class="left">
+            <h4>费用管理</h4>
+            <span class="oneyue"><?=$dataresult['balance_user']?></span>
+            <span class="yue">账户余额:&nbsp;&nbsp;&nbsp;</span>
+        </div>
+            <div class="close">
+                    <span class="guan">x</span>
+                </div>
+        </div>
+        <!-- action="../../front/user/jiesuan.php?id=<?=$_SESSION['user']['id']?>" method="POST" -->
+        <!-- #addb_main .basics .center from .name .password -->
+        <div class="center">
+            <form  onsubmit="return false" action="##" method="post"> 
+                <?php if($mark == 1){?>
+                    <div class="name">     
+                        <span>充值金额&nbsp;&nbsp;:</span>&nbsp;&nbsp;<input type="number" class="username" name="username" value="<?=$dataresult['balance']?>">
+                        </div> 
+                <?php }else{?>
+                    <div class="name">     
+                        <span>确认密码&nbsp;&nbsp;:</span>&nbsp;&nbsp;<input type="password" class="password" name="password" value="">
+                        </div> 
+                <?php }?>
+        <div class="bottom">
+            <button class="save" onclick="config();">确定</button>
+            <div class="cancel">取消</div>
+        </div>
+             </form>
+</div>
+</div>
+
             <form action="../../front/vinegar/list_vinegar.php"  method="post">
             <div class="n_search">
                 <div class="n_s_input">
@@ -154,7 +186,8 @@
                         </ul>
                     </div>
                 </div>
-            
+             
+
                 <div class="n_s_btn">
                     <button onclick="log()"><span class="iconfont icon-sousu" style="cursor:pointer"></span></button>
                

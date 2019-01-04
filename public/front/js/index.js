@@ -31,12 +31,35 @@
     })
 })();
 
-// (function(){
-//     var $person = $("#header .h_m_right .h_m_r_login .person");
-//     $person.click(function(){
-//     })
-// })();
+(function(){
+    var $person = $("#header .h_m_right .h_m_r_login .person");
+    $person.click(function(){
+    })
+})();
+ (function(){
+        var  edit =  $("#header .h_m_right .h_m_r_login li .balance");
+        var  cancel = $("#addb_main .bottom .cancel");
+        var  close = $("#addb_main .basics .top .close .guan");
+            // console.log(edit);
+            edit.click(function(){
+                $("#addb_main").css("display","block");
+            })
+            cancel.click(function(){
+                $("#addb_main").css("display","none");
+            })
+            close.click(function(){
+                $("#addb_main").css("display","none");
+            })
+        })();
 
+        (function(){
+       var edit = $("#p_main .image .i_img li");
+       edit.click(function(){
+           alert(1);
+                $("#img_main").css("display","block");
+            })
+
+        })();
 
 /**nav search*/
 (function () {
@@ -56,6 +79,15 @@
         $tip.fadeToggle(200);
     });
 })();
+
+//     var btn = ("#addb_main .basics .center .bottom .save");
+//     function config(){
+//        alert("111");
+//     //    var password = ("#addb_main .basics .center from .name .password");
+//     var p1 = ("#addb_main .password");
+//     var p2 = ("#addb_main .basics .password");
+//        console.log(p2[0].value);
+//    }
 
 
 /**banner main */

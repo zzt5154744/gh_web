@@ -1,9 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../public/admin/js//xadmin.js"></script>
+    <script type="text/javascript" src="../../public/admin/js//shoppingcar.js"></script>
     <title>Document</title>
     <style>
         *{
@@ -31,7 +36,6 @@ button{
     #box .header .h_left{
         width: 700px;
         float: left;
-        /* height: 150px; */
         line-height: 80px;
     }
     #box .header .h_right{
@@ -53,7 +57,6 @@ button{
         margin-top: 10px;
         float: right;
         width: 620px;
-        /* float: left; */
     }
 
     #box .header .h_left .gouwu .g_car{
@@ -78,8 +81,6 @@ button{
     #main{
         position: relative;
         width: 100%;
-        /* height: 500px; */
-        /* background: rgb(245, 245, 245); */
     }
     #main .m_main{
         width: 1226px;
@@ -103,7 +104,6 @@ button{
         float: left;
     }
     #main .m_main ul.list li input[type=checkbox]{
-        /* margin-top: 10px; */
         padding-top: 20px;
         line-height: 50px;
         background: #E92333;
@@ -123,8 +123,6 @@ button{
     }
     #main .m_main .vinegar li{
         float: left;
-        /* height: 70px; */
-        /* width: 70px; */
         line-height: 70px;
         color: #555;
         text-align: center;
@@ -133,8 +131,6 @@ button{
         color: #f60;
     }
     #main .m_main .vinegar li input[type=checkbox]{
-
-        /* background: #f60; */
         background: #E92333;
         color: #f60;
         width: 20px;
@@ -142,10 +138,8 @@ button{
         cursor: pointer;
     }
     #main .m_main .vinegar .number{
-        /* width: 140px; */
         position: relative;
         border: 1px solid #ccc;
-        /* height: 50px; */
         margin-left: 20px;
         line-height: 35px;
         text-align: center;
@@ -216,11 +210,12 @@ button{
         margin-right: 25px;
         color:#ccc;
     }
-    #footer .f_right .heji button{
+    #footer .f_right .heji a{   
         width: 140px;
         height: 60px;
         position: absolute;
         right: 0;
+        text-align: center;
         cursor: pointer;
         background: #f60;
         color: white;
@@ -232,6 +227,9 @@ button{
     #footer .f_right .price{
         margin-left: 10px;
         font-size: 25px;
+    }
+    #footer .f_right .heji .huise{
+        background: #777;
     }
     </style>
 </head>
@@ -250,7 +248,7 @@ button{
         <div class="h_right">
             <div class="r_user">
             <a><?=$username?></a>
-            <a>我的订单</a>
+            <a href="../../front/user/order.php">我的订单</a>
             </div>
         </div>
     </div>
@@ -269,17 +267,47 @@ button{
                 <li  style="width:70px;">操作</li>
             </ul>
 
-
+            
+            <?php if($shoppingcount == 0){?>
+                <form action="" method="post">
+                    <ul class="vinegar">
+                    </ul>
+                </form>
+            </div>
+        </div>
+    
+    
+    
+        <div id="footer">
+            <div class="f_left">
+                <div class="shop">
+            <span class="shopping">继续购物</span><span class="heng">|</span>
+            <span>共 <span class="index"><?=$shoppingcount?></span> 件商品,已选择 <span class="index">0</span>件</span>
+                </div>
+             </div>
+             <div class="f_right">
+                 <div class="heji">
+                <span class="heng">|</span>
+                <span class="sum">合计:</span>
+                <span class="sumprice"><?=$sum?></span>
+                <span class="sum"></span>
+                <button class="huise">去结算</button>
+            </div>
+             </div>
+        </div>
+            <?php }else{ ?>
             <?php foreach($result_shopping as $item):?>
+            <form action="" id="form" method="post">
             <ul class="vinegar">
+            <input type="hidden" class="inpclass" value="<?=$item['s_id']?>">
             <li style="width:40px;padding-left:30px">
             <input type="checkbox">
             </li> 
-            
+           
              <li style="width:100px;">
-             <img src="../../public/upload/<?=$item['image']?>" style="width:60px;height:60px;" alt="">
+            <a href="../../front/user/details.php?id=<?=$item['v_id']?>"><img src="../../public/upload/<?=$item['image']?>" style="width:60px;height:60px;" alt=""></a> 
             </li>
-
+            <input type="hidden" class="vidclass" value="<?=$item['v_id']?>">
             <li style="width:360px;">
             <span class="username"><?=$item['v_name']?></span>
             </li>
@@ -289,23 +317,22 @@ button{
             </li>
 
             <li class="number"style="width:145px;">
-                <span class="add">-</span>
-                <span class="val">1</span>
                 <span class="adc">+</span>
+                <span class="val"><?=$item['num']?></span>
+                <span class="add">-</span>
             </li>
             <li class="xiaoji" style="width:215px;">
-                    <span><?=$item['price']?>元</span>
+                    <span class="xiaoji2"><?=$item['price']*$item['num']?>元</span>
                 </li>        
             <li class="opertion" style="width:110px;">
-                    <a>×</a>
+                    <a type="submit" onclick="member_del(this,'<?=$item['s_id']?>')" >×</a>
             </li>
             </ul>
+        
             <?php endforeach;?>
+       
         </div>
     </div>
-
-
-
     <div id="footer">
         <div class="f_left">
             <div class="shop">
@@ -317,38 +344,107 @@ button{
              <div class="heji">
             <span class="heng">|</span>
             <span class="sum">合计:</span>
-            <span class="price"><?=$sum?></span>
-            <span class="sum">元</span>
-            <button>去结算</button>
+            <span class="sumprice"><?=$sum?></span>
+            <span class="sum"></span>
+            <a onclick="order();">去结算</a>
         </div>
+    </form>
          </div>
     </div>
+    <?php }?>
     <script>
-        var left_btn = document.getElementsByClassName("add")[0];
-        var right_btn = document.getElementsByClassName("adc")[0];
-        var text = document.getElementsByClassName("val")[0];
 
-        function add(btn) {
-            btn.onclick=function () {
-                text.innerHTML++;
-            }
-        }
-        add(right_btn);
-        // add.call(text.innerHTML);
-        function adc(btn) {
-            btn.onclick=function() {
-                text.innerHTML--;
-                if(text.innerHTML < 0){
-                    text.innerHTML = 0;
-                    alert("到底了");
+        var left_btn = document.getElementsByClassName("add");
+        var right_btn = document.getElementsByClassName("adc");
+        var inp = document.getElementsByClassName('inpclass');
+        var xiaoji = document.getElementsByClassName('xiaoji2');
+        var price = document.getElementsByClassName('price');
+        var sum = document.getElementsByClassName('sumprice')[0];
+            for(var i=0;i<right_btn.length;i++){
+            right_btn[i].index = i;
+            right_btn[i].onclick = function(){
+            var text = document.getElementsByClassName("val");
+            var val = ++text[this.index].innerHTML;
+            var id = inp[this.index].value;
+            pricecount = price[this.index].innerHTML;
+            var xiaoji2 = xiaoji[this.index].innerHTML;
+            var that = this;
+            $.post("../../front/user/addnum.php",{
+                dataType: "json",//预期服务器返回的数据类型
+                "s_id":id,
+                "num":val,
+            },function(){
+                xiaoji[that.index].innerHTML = pricecount * val+"元";
+                addc = parseInt(xiaoji[that.index].innerHTML);
+                var sumtotal = 0;
+                for(var j =0;j<right_btn.length;j++){
+                    sumtotal+= parseInt(xiaoji[j].innerHTML);
                 }
+                  sum.innerHTML  = sumtotal;
+            })
+        }
+        }
+        
+
+    for(var j=0;j<left_btn.length;j++){
+            left_btn[j].index = j;
+            left_btn[j].onclick = function(){
+            var text = document.getElementsByClassName("val");
+            var val = --text[this.index].innerHTML;
+            var id = inp[this.index].value;
+            pricecount = price[this.index].innerHTML;
+            var xiaoji2 = xiaoji[this.index].innerHTML;
+            if(text[this.index].innerHTML < 1){
+                text[this.index].innerHTML = 1;
+            }
+            var thist = this;
+            $.post("../../front/user/addnum.php",{
+                dataType: "json",//预期服务器返回的数据类型
+                "s_id":id,
+                "num":val,
+            },function(){
+                xiaoji[thist.index].innerHTML = pricecount * val+"元";
+                var sumtotal = 0;
+                for(var j =0;j<right_btn.length;j++){
+                    sumtotal+= parseInt(xiaoji[j].innerHTML);
+                }
+                  sum.innerHTML  = sumtotal;
+            })
+        }
+        }
+
+
+        function order(){
+            var username = $(".vinegar .username");
+            var vid = document.getElementsByClassName("vidclass");
+            for(var i = 0 ; i < username.length;i++ ){
+            var v_id = vid[i].value;
+            var s_id = inp[i].value;
+            var total_ =  parseInt(xiaoji[i].innerHTML);
+            $.post("../../front/user/addshadow.php",{
+                dataType:"json",
+                "v_id":v_id,
+                "s_id":s_id,
+                "total":total_
+            },function(){
+                location.href="../../front/user/shadowsocks.php";
+            })
             }
         }
-        adc(left_btn);
+        function member_del(obj,id){
+        layer.confirm('确认要删除这条商品吗？',function(index){
+            //发异步删除数据
+            $.post('http://localhost:8088/PHP/PHP_zzt/front/user/shop-del.php',{id:id},function(data){
+            $(obj).parents("ul").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+                
+            });
 
+        });
+        }
 
 
     </script>
-
+    <script src="../../public/front/js/jquery-3.3.1.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ include_once ROOT_PATH.'model/Vinegar.class.php';
 include_once ROOT_PATH.'model/Category.class.php';
 $vinegar = new Vinegar();
 $category = new Category();
+
 include_once ROOT_PATH."front/vinegar/nav_hide.php";
 // var_dump($data);
 $result =  $vinegar->selectMany(['tab'=>1],'0,5',['addtime'=>'desc']);

@@ -11,25 +11,47 @@
     $pdo = new MyPDO();
 
     
-
-    if (isset($_SESSION['user'])) {
-        $user_id = $_SESSION['user']['id'];
-        }else{
-        $user_id = "";
+    function dopost(){
+        if (isset($_SESSION['user'])) {
+            $user_id = $_SESSION['user']['id'];
+            }else{
+            $user_id = "";
+            }
+            $user = new User();
+        $uid = $_GET['id'];
+        $password = $_POST['password'];
+        $result_id = $user->select(['id'=>$uid]);
+        if($password == $result_id['password']){
+            $mark = 1;
         }
-        // $result_id = $vinegar->select($data_id);
-        // $data_id  = $result_id;
-        $sql  = "select * from shopping_view where user_id = $user_id";
-        $result_id = $user->select(['id'=>$user_id]);
-        // var_dump($result_id);
-        // echo $result_id['role'];
-        $result_shopping = $pdo->selectAll($sql);
-        $count = count($result_shopping);
-        // echo($count);
-        $sum = 0;
-        foreach($result_shopping as $item){
-            $sum += $item['price'];
-            // echo($sum);
-        }
+        include_once ROOT_PATH."view/front/home/index.html";
+    }
 
-         include_once ROOT_PATH."view/front/header.html";
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+    dopost();
+    }
+    else{
+        $mark = 0;
+        if (isset($_SESSION['user'])) {
+            $user_id = $_SESSION['user']['id'];
+            }else{
+            $user_id = "";
+            }
+            $sql  = "select * from shopping_view where user_id = $user_id";
+            $result_id = $user->select(['id'=>$user_id]);
+            $result_shopping = $pdo->selectAll($sql);
+            $count = count($result_shopping);
+            $sum = 0;
+            foreach($result_shopping as $item){
+                $sum += $item['price'];
+            }
+            $user = new User();
+            $userid = $_SESSION['user']['id'];
+            $result22 = $user->select(['id'=>$userid]);
+            $dataresult = $result22;
+             include_once ROOT_PATH."view/front/header.html";
+
+    }
+    
+
+    

@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../public/admin/lib/layui/layui.js" charset="utf-8"></script>
+   <script type="text/javascript" src="../../public/admin/js/shadow.js"></script>
+    <script type="text/javascript" src="../../public/admin/js//xadmin.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{text-decoration: none;}
+button{
+    outline: none;
+    border: none;
+}
+    #box {
+        width: 100%;
+        height: 100px;
+        border-bottom:  2px solid #f60;
+        background: white;
+    }
+    #box .header{
+        width: 1226px;
+        margin: 0 auto;
+    }
+    #box .header .h_left{
+        width: 700px;
+        float: left;
+        line-height: 80px;
+    }
+    #box .header .h_right{
+        float: right;
+        margin-top: 10px;
+        width: 520px;
+        height: 100px;
+        line-height: 80px;
+    }
+    #box .header .h_left .img {
+        display: inline;
+        width: 80px;
+    }
+    #box .header .h_left .img .logo{
+        margin-top: 25px;
+        background: #f60;
+    }
+    #box .header .h_left .gouwu{
+        margin-top: 10px;
+        float: right;
+        width: 620px;
+    }
+
+    #box .header .h_left .gouwu .g_car{
+        font-size: 25px;
+        color: #333;
+        font-weight: normal;
+    }
+    #box .header .h_left .gouwu .inform{
+        font-size: 12px;
+        color: #777;
+        margin-left: 20px;
+    }
+    #box .header .h_right .r_user{
+        font-size: 12px;
+        margin-left: 330px;
+    }
+    #box .header .h_right .r_user a{
+        margin-left: 20px;
+        color: #333;
+        cursor: pointer;
+    }
+    #main{
+        position: relative;
+        width: 100%;
+    }
+    #main .m_main{
+        width: 1226px;
+        height: 500px;
+        margin: 50px auto;
+        background: white;
+    }
+    body{
+        background: rgb(245, 245, 245);
+    }
+    #main .m_main ul.list{
+        width: 1226px;
+        height: 70px;
+        line-height: 70px;
+        /* border-bottom: 1px solid #ccc; */
+    }
+    #main .m_main ul.list li{
+        font-size: 14px;
+        color: #444;
+        line-height: 70px;
+        float: left;
+    }
+    #main .m_main ul.list li input[type=checkbox]{
+        /* margin-top: 10px; */
+        padding-top: 20px;
+        line-height: 50px;
+        background: #E92333;
+        color: #f60;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    #main .m_main .username{
+        font-size: 18px;    
+        color: #444;
+    }
+    #main .m_main .vinegar{
+        height: 80px;
+        line-height: 70px;
+        margin-top: 15px;
+    }
+    #main .m_main .vinegar li{
+        float: left;
+        line-height: 70px;
+        color: #555;
+        text-align: center;
+    }
+    #main .m_main .vinegar li.xiaoji{
+        color: #f60;
+    }
+    #main .m_main .vinegar li input[type=checkbox]{
+
+        /* background: #f60; */
+        background: #E92333;
+        color: #f60;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    #main .m_main .vinegar .number{
+        position: relative;
+        border: 1px solid #ccc;
+        margin-left: 20px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 17px auto;
+    }
+    #main .m_main .vinegar .number .add{
+        position: absolute;
+        left: 10px;
+    }
+    #main .m_main .vinegar .number .adc{
+        position: absolute;
+        right: 10px;
+    }
+    #main .m_main .vinegar .opertion a{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        display:inline-block;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    #main .m_main .vinegar .opertion a:hover{
+        background-color: #333;
+        color: white;
+    }
+    #footer{
+        position: relative;
+        width: 1226px;
+        background: white;
+        line-height: 60px;
+        height: 60px;
+        margin: 40px auto;
+    }
+    #footer .f_left{
+        width: 613px;
+        float: left;
+    }
+    #footer .f_left span{
+        font-size: 14px;
+        color: #777;
+    }
+    #footer .f_left span.shopping{
+        display:inline-block;
+        padding-right: 25px;
+    }
+    #footer .f_left span.heng{
+        display:inline-block;
+        color: #ddd;
+        padding-right: 25px;
+    }
+    #footer .f_left .shop{
+        margin-left: 50px;
+    }
+    #footer .f_left span .index{
+        color: #f60;
+    }
+    #footer .f_right{
+        width: 613px;
+        float: right;
+    } 
+    #footer .f_right .heji{
+        margin-left: 300px;
+    }
+    #footer .f_right .heji span.heng{
+        margin-right: 25px;
+        color:#ccc;
+    }
+    #footer .f_right .heji a{   
+        width: 140px;
+        height: 60px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        cursor: pointer;
+        background: #f60;
+        color: white;
+    }
+    #footer .f_right span{
+        color: #f60;
+        font-size: 14px;
+    }
+    #footer .f_right .price{
+        margin-left: 10px;
+        font-size: 25px;
+    }
+    #footer .f_right .heji .huise{
+        background: #777;
+    }
+    #main .m_main .address{
+        width: 250px;
+        height: 140px;
+        border: 1px #ccc solid;
+        margin: 20px 50px;
+        cursor: pointer;
+        color: #777;
+    }
+    #main .m_main .address .list{
+        width: 200px;
+        height: 100px;
+        margin-left: 30px;
+        /* margin-top: 10px; */
+    }
+    #main .m_main .address .list li{
+        width: 200px;
+        height: 30px;
+        color: #777;
+    }
+    #main .m_main .address .list>li:first-child{
+        font-size: 18px;
+        color: #333;
+    }
+    #main .m_main .m_address{
+        width: 250px;
+        height: 200px;
+        padding-top: 40px;
+        /* margin-top: 50px; */
+    }
+    #main .m_main .getress{
+        width: 250px;
+        margin-left: 50px;
+        font-size: 20px;
+        font-weight: normal;
+    }
+    #main .m_main .address:hover{
+        border:1px solid #aaa;
+    }
+    #main .m_main .address:hover .add{
+        background: #555;
+    }
+    #main .m_main .address .add{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        background: #ccc;
+        text-align: center;
+        color: white;
+        font-size:20px;
+        font-weight: bold;
+        margin: 0 auto;
+        cursor: pointer;
+        margin-top: 20%;
+    }
+    #main .m_main .address .newress{
+        width: 250px;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    #main .m_main .produce{
+        background:white;
+    }
+    #main .m_main .produce .title{
+        margin: 20px auto;
+        margin-left: 50px;
+        width:1080px;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #ccc;
+    }
+    #main .m_main .produce .title .text{
+        float: left;
+        font-size: 20px;
+        display: inline;
+    }
+    #main .m_main .produce .title .shop{
+        float: right;
+        display: inline;
+        font-size: 14px;
+        color: #777;
+        cursor: pointer;
+    }
+    #main .m_main .produce .list{
+        width: 1080px;
+        padding: 20px auto;
+        padding-left: 50px;
+        height: 50px;
+        line-height: 50px;
+        background: white;
+    }
+    #main .m_main .produce .list li {
+        /* width: 200px; */
+        height: 50px;
+        line-height: 50px;
+        float: left;
+     
+    }
+    #main .m_main .produce .list li.image img{
+        height: 50px;
+    }
+    #main .m_main .produce .list li span.total{
+        color: #f60;
+    }
+    #main .m_main .delivery{
+        /* margin: 20px auto; */
+        padding-left: 50px; 
+        width:1176px;
+        height: 150px;
+        line-height: 80px;
+        background: white;
+    }
+    #main .m_main .delivery .d_left{
+        float: left;
+    }
+    #main .m_main .delivery p{
+        font-size: 20px;
+        display: inline;
+    }
+    #main .m_main .delivery .d_right{
+        padding-right:90px;
+        float: right;
+    }
+
+
+    #main .m_main .delivery button{
+        margin-left: 30px;
+        width: 100px;
+        height: 40px;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        background: #f60;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    #main .m_main .delivery .d_price{
+        color: #f60;
+    }
+    #b_main{
+        position:absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+    #b_main .basics{
+        position: absolute;
+        top: 20%;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+        border-radius: 5px;
+        width: 450px;
+        height: 400px;
+        background: rgb(249, 249, 249);
+    }
+    #b_main .basics .top{
+        width: 400px;
+        height: 35px;
+        margin: 0 auto;
+        padding-top: 15px;
+        padding-left: 9px;
+        border-bottom: 1px solid #aaa;
+        margin-bottom: 5px;
+    }
+    #b_main .basics .top .left{
+        float: left;
+  
+    }
+    #b_main .basics .close{
+        width: 10px;
+        margin-top: 10px;
+        height: 10px;
+        line-height: 10px;
+        float: right;
+    }
+    #b_main .basics .close span{
+        color: #555;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #b_main .basics .bottom{
+        margin-left: 30px;
+        width: 230px;
+        height: 35px;
+    }
+    #b_main .basics .bottom button{
+        width: 100px;
+        height: 35px;
+        color: black;
+        background: #eee;
+        cursor: pointer;
+    }
+    #b_main .basics .bottom div{
+        display: inline-block;
+        width: 100px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        font-size: 13px;
+        color: black;
+        background: #eee;
+        cursor: pointer;
+    }
+    #b_main .basics .bottom button.save{
+        background: #f60;
+        margin-right: 20px;
+        color: white;
+    }
+    #b_main .basics form{
+        width: 330px;
+        margin: 0 auto;
+    }
+    #b_main .basics form div{
+        margin-top: 15px;
+        line-height: 35px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #555;
+    }
+    #b_main .basics input{
+        float: right;
+        text-indent: 4px;
+        font-size: 14px;
+        color: #777;
+        width: 230px;
+        height: 35px;
+        border: 1px solid #ddd;
+    }
+
+    #b_main .basics .text{
+        line-height: 60px;
+    }
+    #b_main .basics .text textarea{
+        text-indent: 4px;
+        color: #777;
+        width: 330px;
+        height: 60px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="header">
+        <div class="h_left">
+            <div class="img">
+            <img class="logo" src="../../public/front/image/mi-logo.png" style="width:60px;height:50px;" alt="">
+        </div>
+            <div class="gouwu">
+            <span class="g_car">确认订单</span>
+             </div>
+    </div>
+        <div class="h_right">
+            <div class="r_user">
+            <a><?=$username?></a>
+            <a href="../../front/user/order.php">我的订单</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="main"> 
+        <!-- 主面板 -->
+        <div class="m_main">
+            <!-- 地址 -->
+            <?php if($data['address']==null && $data['o_name']==null && $data['o_phone']==null){?>
+            <div class="m_address">
+            <p class="getress">收货地址</p>
+            <div class="address">
+                <p class="add">+</p>
+                <p class="newress">添加新地址</p>
+            </div>
+            </div>
+            <?php }else{?>
+            <div class="m_address">
+                <div class="address">
+                    <ul class="list">
+                        <li><?=$data['o_name']?></li>
+                        <li><?=$data['o_phone']?></li>
+                        <li><?=$data['address']?></li>
+                    </ul>
+                </div>
+                </div>
+
+            <?php }?>
+            <!-- 商品 -->
+            <div class="produce">
+                <div class="title">
+                <p class="text">
+                    商品及优惠券
+                </p>
+                
+                <a href="../../front/user/shoppinglist.php" class="shop">
+                    返回购物车
+                </a>
+                </div>
+                <?php foreach($result_shopping as $item):?>
+                <ul class="list">
+                <input type="hidden" class="inpclass" value="<?=$item['s_id']?>">
+                <input type="hidden" class="vidclass" value="<?=$item['v_id']?>">
+                <li class="image" style="width:60px;">
+               <a href="../../front/user/details.php?id=<?=$item['v_id']?>"><img class="img" style="width:35px;height:35px" src="../../public/upload/<?=$item['image']?>" alt=""></a> 
+                </li>
+                        
+                <li>
+                <p style="width:500px;" class="ptitle"><?=$item['v_name']?></p>
+                </li>
+
+                <li style="width:450px;">
+                <span><?=$item['price']?></span>
+                <span>x&nbsp;<?=$item['num']?></span>    
+                </li>
+
+                <li>
+                  <span class="total"><?=$item['total']?></span>  
+                </li>
+                </ul>
+                <?php endforeach;?>
+            </div>
+            <!-- 配送 -->
+            <div class="delivery">
+                <div class="d_left">
+                        <p>配送方式</p>
+                        <span>包邮</span>
+                </div>
+           <div class="d_right">
+                <span>应付总额:</span>
+                <span class="d_price"><?=$sum?></span><span class="d_price">元</span> 
+                <button onclick="btn()">立即下单</button>
+           </div>
+            </div>
+         </div>
+    </div>
+  
+
+    <div id="b_main">
+        <div class="basics">
+            <div class="top">
+                <div class="left">
+                <h4>编辑基础资料</h4>
+                </div>
+                <div class="close">
+                        <span class="guan">x</span>
+                    </div>
+            </div>
+            <div class="center">
+                <form action="../../front/user/shadowsocks.php?id=<?=$_SESSION['user']['id']?>" method="POST"> 
+                    <div class="name">     
+                    <span>收货人姓名&nbsp;&nbsp;:</span>&nbsp;&nbsp;<input type="text" name="o_name" value="<?=$data['o_name']?>">
+                    </div> 
+                    <div class="sex">
+                    <span>联系方式&nbsp;&nbsp;:</span>&nbsp;&nbsp;<input type="number" name="o_phone" value="<?=$data['o_phone']?>">
+                    </div> 
+                    <div class="text">
+                    <span>收货地址:&nbsp;&nbsp;</span>&nbsp;
+                    <textarea id="" cols="30" rows="10" name="address" value="<?=$data['address']?>"><?=$data['address']?></textarea>
+                    </div>
+            <div class="bottom">
+                <button class="save">保存</button>
+                <div class="cancel">取消</div>
+            </div>
+                 </form>
+    </div>
+    </div>
+    <script>
+       
+          function btn(){
+            var total_ = $("#main .m_main .produce .list li span.total");
+            var vid = $("#main .m_main .produce .list .vidclass");
+            var inp = $("#main .m_main .produce .list .inpclass");
+            // var address =  $("#b_main .basics .center .name input")[0].value;
+            // var phononumber =  $("#b_main .basics .center .sex input")[0].value;
+            var sum = $("#main .m_main .delivery .d_right .d_price")[0].innerHTML;
+            var consignee = $("#main .m_main .address .list li")[0].innerHTML;
+            var photonumber = $("#main .m_main .address .list li")[1].innerHTML;
+            var address = $("#main .m_main .address .list li")[2].innerHTML;
+         
+            var o_id = "A"+(Math.random().toString(34).substr(4));
+            var oo_id = o_id;
+            console.log(sum,consignee,photonumber,address,oo_id);
+            for(var i = 0 ; i < total_.length;i++ ){
+            var v_id = vid[i].value;
+            var s_id = inp[i].value;
+            var total = total_[i].innerHTML;
+            $.post("../../front/user/addrelation.php",{
+                dataType:"json",
+                "v_id":v_id,
+                "s_id":s_id,
+                "total":total,
+                "o_id":o_id
+            },function(){
+                // location.href="../../front/user/order.php";
+            })
+            }
+             $.post("../../front/user/addorder.php",{
+                dataType:"json",
+                "o_id":o_id,
+                "address":address,
+                "sum":sum,
+                "consignee":consignee,
+                "photonumber":photonumber
+            },function(){
+                location.href="../../front/user/order.php";
+            })
+          }
+        (function(){
+        var  edit =  $("#main .m_main .m_address");
+        var  cancel = $("#b_main .bottom .cancel");
+        var  close = $("#b_main .basics .top .close .guan");
+            // console.log(edit);
+            edit.click(function(){
+                $("#b_main").css("display","block");
+            })
+            cancel.click(function(){
+                $("#b_main").css("display","none");
+            })
+            close.click(function(){
+                $("#b_main").css("display","none");
+            })
+        })();
+
+        (function(){
+       var edit = $("#p_main .image .i_img li");
+       edit.click(function(){
+           alert(1);
+                $("#img_main").css("display","block");
+            })
+
+        })();
+
+
+        var left_btn = document.getElementsByClassName("add");
+        var right_btn = document.getElementsByClassName("adc");
+        var inp = document.getElementsByClassName('inpclass');
+        var xiaoji = document.getElementsByClassName('xiaoji2');
+        var price = document.getElementsByClassName('price');
+        var sum = document.getElementsByClassName('sumprice')[0];
+            for(var i=0;i<right_btn.length;i++){
+            // console.log(sumtotal);
+            right_btn[i].index = i;
+            right_btn[i].onclick = function(){
+            var text = document.getElementsByClassName("val");
+            var val = ++text[this.index].innerHTML;
+            var id = inp[this.index].value;
+            pricecount = price[this.index].innerHTML;
+            var xiaoji2 = xiaoji[this.index].innerHTML;
+            // sum.innerHTML;]
+            var that = this;
+            $.post("../../front/user/addnum.php",{
+                dataType: "json",//预期服务器返回的数据类型
+                "s_id":id,
+                "num":val,
+            },function(){
+                xiaoji[that.index].innerHTML = pricecount * val+"元";
+                addc = parseInt(xiaoji[that.index].innerHTML);
+                // sum.innerHTML += pricecount * val;
+                var sumtotal = 0;
+                for(var j =0;j<right_btn.length;j++){
+                    sumtotal+= parseInt(xiaoji[j].innerHTML);
+                }
+                  sum.innerHTML  = sumtotal;
+            })
+        }
+        }
+        
+
+    for(var j=0;j<left_btn.length;j++){
+            left_btn[j].index = j;
+            left_btn[j].onclick = function(){
+            var text = document.getElementsByClassName("val");
+            var val = --text[this.index].innerHTML;
+            var id = inp[this.index].value;
+            pricecount = price[this.index].innerHTML;
+            var xiaoji2 = xiaoji[this.index].innerHTML;
+            if(text[this.index].innerHTML < 1){
+                text[this.index].innerHTML = 1;
+            }
+            var thist = this;
+            $.post("../../front/user/addnum.php",{
+                dataType: "json",//预期服务器返回的数据类型
+                "s_id":id,
+                "num":val,
+            },function(){
+                xiaoji[thist.index].innerHTML = pricecount * val+"元";
+                var sumtotal = 0;
+                for(var j =0;j<right_btn.length;j++){
+                    sumtotal+= parseInt(xiaoji[j].innerHTML);
+                }
+                  sum.innerHTML  = sumtotal;
+            })
+        }
+        }
+
+        function member_del(obj,id){
+        layer.confirm('确认要删除这条商品吗？',function(index){
+            //发异步删除数据
+            $.post('http://localhost:8088/PHP/PHP_zzt/front/user/shop-del.php',{id:id},function(data){
+            $(obj).parents("ul").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+                
+            });
+
+        });
+        }
+
+
+    </script>
+    <script src="../../public/front/js/jquery-3.3.1.js"></script>
+</body>
+</html>
